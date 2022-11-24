@@ -1,0 +1,28 @@
+:root {
+  --dark: #111111;
+  --gray: #535353;
+  --light: #ffffff;
+  --lightGray: #a3a3a3;
+  --transparent: rgba(255, 255, 255, 0.1);
+
+  --primaryLight: #b66d40;
+  --primaryMain: #a36238;
+  --primaryDark: #64371d;
+
+  --secondaryLight: #39eee4;
+  --secondaryMain: #53d3cc;
+  --secondaryDark: #37bab3;
+
+  --primaryGradient: linear-gradient(
+    104.04deg,
+    #b66d40 0%,
+    #a36238 51.04%,
+    #64371d 100%
+  );
+  --secondaryGradient: linear-gradient(
+    104.04deg,
+    #38eee4 0%,
+    #53d3cc 53.12%,
+    #37bab3 100%
+  );
+}
