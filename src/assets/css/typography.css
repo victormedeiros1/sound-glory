@@ -1,0 +1,15 @@
+@import '@fontsource/barlow';
+@import '@fontsource/quicksand';
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Barlow', sans-serif;
+}
