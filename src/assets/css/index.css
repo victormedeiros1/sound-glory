@@ -1,4 +1,4 @@
-@import url('./breakpoints.css');
 @import url('./global.css');
 @import url('./palette.css');
+@import url('./spacing.css');
 @import url('./typography.css');
