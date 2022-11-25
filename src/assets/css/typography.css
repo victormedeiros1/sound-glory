@@ -13,3 +13,7 @@ h5,
 h6 {
   font-family: 'Barlow', sans-serif;
 }
+
+:root {
+  --fs-12: 0.75rem;
+}
