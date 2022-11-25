@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-image: url('/src/assets/images/bg-headphone.jpg');
+  background-size: cover;
+  background-position: -50%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('/src/assets/images/bg-headphone-mobile.jpg');
+    background-position: center;
+  }
+}
