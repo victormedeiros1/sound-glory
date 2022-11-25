@@ -1,4 +1,3 @@
-import React from 'react';
 import Divider from '../Divider';
 import Logo from '../Logo';
 import { Nav, NavItem } from './styles';

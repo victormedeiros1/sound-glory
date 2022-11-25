@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ContainerStyles } from './styles';
 
 interface Props {

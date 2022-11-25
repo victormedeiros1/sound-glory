@@ -10,16 +10,6 @@ const Playlist: React.FC = () => {
 
       <Songs>
         <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
-        <Song title="Não Temos Tempo" description="Nossa Toca" />
       </Songs>
 
       <Controls />

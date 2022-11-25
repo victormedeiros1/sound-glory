@@ -1,4 +1,3 @@
-import React from 'react';
 import { Description, SongStyles, Title } from './styles';
 
 interface Props {
