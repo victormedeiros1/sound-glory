@@ -3,9 +3,16 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
   max-width: 12.5rem;
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: var(--dark);
   box-shadow: var(--shadow);
   padding: var(--p-32);
 `;
