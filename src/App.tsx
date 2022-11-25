@@ -1,8 +1,13 @@
 import './assets/css/index.css';
-import Home from './pages';
+import Container from './components/Container';
+import Player from './components/Player';
 
 const App = () => {
-  return <Home />;
+  return (
+    <Container>
+      <Player />
+    </Container>
+  );
 };
 
 export default App;

@@ -1,9 +1,5 @@
 const Player: React.FC = () => {
-  return (
-    <div>
-      <h1>Player</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Player;
