@@ -1,5 +1,7 @@
+import { LogoStyles } from './styles';
+
 const Logo: React.FC = () => {
-  return <img src="/src/assets/images/logo.svg" />;
+  return <LogoStyles src="/src/assets/images/logo.svg" />;
 };
 
 export default Logo;
