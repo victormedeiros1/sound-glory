@@ -1,11 +1,13 @@
 import './assets/css/index.css';
 import Container from './components/Container';
-import Player from './components/Player';
+import Playlist from './components/Playlist';
+import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (
     <Container>
-      <Player />
+      <Sidebar />
+      <Playlist />
     </Container>
   );
 };
