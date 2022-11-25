@@ -1,4 +1,5 @@
 @import '@fontsource/barlow';
+@import '@fontsource/barlow/900.css';
 @import '@fontsource/quicksand';
 
 * {
@@ -16,4 +17,5 @@ h6 {
 
 :root {
   --fs-12: 0.75rem;
+  --fs-128: 8rem;
 }
