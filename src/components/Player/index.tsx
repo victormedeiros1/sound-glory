@@ -1,5 +1,11 @@
+import Sidebar from '../Sidebar';
+
 const Player: React.FC = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 };
 
 export default Player;
