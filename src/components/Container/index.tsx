@@ -3,7 +3,7 @@ import React from 'react';
 import { ContainerStyles } from './styles';
 
 interface Props {
-  children: JSX.Element;
+  children: JSX.Element[];
 }
 
 const Container: React.FC<Props> = ({ children }) => {
