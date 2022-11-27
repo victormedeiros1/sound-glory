@@ -12,8 +12,9 @@ interface Song {
 }
 
 const Playlist: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const [songThatWasPlaying, setSongThatWasPlaying] =
-    useState<HTMLAudioElement>();
+    useState<HTMLAudioElement>(new Audio());
 
   const songs = [
     {
@@ -35,10 +36,12 @@ const Playlist: React.FC = () => {
       path: '/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3',
     },
   ];
+
   const playSong = (song: Song) => {
     if (!songThatWasPlaying) {
       const audio = new Audio(song.path);
       audio.play();
+      setIsPlaying(true);
 
       setSongThatWasPlaying(audio);
     } else {
@@ -46,6 +49,8 @@ const Playlist: React.FC = () => {
 
       const audio = new Audio(song.path);
       audio.play();
+      setIsPlaying(true);
+
       setSongThatWasPlaying(audio);
     }
   };
@@ -62,7 +67,12 @@ const Playlist: React.FC = () => {
         ))}
       </Songs>
 
-      <Controls />
+      <Controls
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        setSongThatWasPlaying={setSongThatWasPlaying}
+        songThatWasPlaying={songThatWasPlaying}
+      />
     </PlaylistStyles>
   );
 };
