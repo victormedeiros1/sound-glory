@@ -18,12 +18,16 @@ export const Nav = styled.nav`
 `;
 
 export const NavItem = styled.button`
+  display: flex;
   background-color: transparent;
+  align-items: center;
+  justify-content: center;
   border: none;
   color: var(--lightGray);
   font-size: var(--fs-12);
   font-weight: 700;
   letter-spacing: 1px;
+  gap: 0.5rem;
 
   :hover {
     color: var(--light);
