@@ -1,4 +1,5 @@
 # Getting Started with Vite!
+Next Generation Frontend Tooling. Get ready for a development environment that can finally catch up with you.
 
 ## Available Scripts
 
