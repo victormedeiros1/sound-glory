@@ -1,3 +1,6 @@
+# About
+An app to listen to music and mainly apply my studies in Typescript, Redux with Redusauce and Duck Pattern.
+
 # Getting Started with Vite!
 Next Generation Frontend Tooling. Get ready for a development environment that can finally catch up with you.
 
@@ -16,9 +19,6 @@ Builds the app for production to the build folder
 
 ### `npm run preview`
 Locally preview production build
-
-# About
-An app to listen to music and mainly apply my studies in Typescript, Redux with Redusauce and Duck Pattern.
 
 ## Learn More
 
