@@ -1,3 +1,5 @@
+![sound-glory-thumbnail](https://user-images.githubusercontent.com/66215200/204297348-198e05e2-9cec-4dc6-a994-30af371f33ae.jpg)
+
 # About
 An app to listen to music and mainly apply my studies in Typescript, Redux with Redusauce and Duck Pattern.
 
