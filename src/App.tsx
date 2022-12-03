@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Provider } from 'react-redux';
 import './assets/css/index.css';
 import Container from './components/Container';
 import Modal from './components/Modal';

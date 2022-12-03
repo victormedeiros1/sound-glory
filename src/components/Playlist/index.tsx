@@ -3,13 +3,7 @@ import Controls from '../Controls';
 import Header from './Header';
 import Song from './Song';
 import { PlaylistStyles, Songs } from './styles';
-
-interface Song {
-  id: number;
-  title: string;
-  description: string;
-  path: string;
-}
+import { ISong } from '../../helpers/types';
 
 const Playlist: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -37,7 +31,7 @@ const Playlist: React.FC = () => {
     },
   ];
 
-  const playSong = (song: Song) => {
+  const playSong = (song: ISong) => {
     if (!songThatWasPlaying) {
       const audio = new Audio(song.path);
       audio.play();

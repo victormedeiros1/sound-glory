@@ -19,8 +19,8 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
       </NavItem>
       <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
       <Divider />
-      <NavItem>COPA DO MUNDO</NavItem>
-      <NavItem>FORRÓZIN</NavItem>
+      {/* <NavItem>COPA DO MUNDO</NavItem>
+      <NavItem>FORRÓZIN</NavItem> */}
     </Nav>
   );
 };
