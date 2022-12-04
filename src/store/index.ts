@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import playlistsReducer from './ducks/playlists';
+import slicePlaylists from './ducks/playlist';
 
 export const store = configureStore({
   reducer: {
-    playlists: playlistsReducer,
+    playlists: slicePlaylists,
   },
 });
 
-console.log(store.getState());
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
