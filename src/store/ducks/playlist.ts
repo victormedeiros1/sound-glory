@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
+import { v4 as uuid } from 'uuid';
 interface Song {
   title: string;
   description: string;
@@ -7,6 +7,7 @@ interface Song {
 }
 
 interface Playlist {
+  id: string;
   name: string;
   songs?: Song[];
 }
@@ -22,7 +23,7 @@ const slicePlaylists = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     addPlaylist(state, { payload }: PayloadAction<string>) {
-      return [...state, { name: payload }];
+      return [...state, { id: uuid(), name: payload }];
     },
   },
 });
