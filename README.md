@@ -1,3 +1,9 @@
+![sound-glory-thumbnail](https://user-images.githubusercontent.com/66215200/204311515-526f7c4d-56ad-4554-a96b-89c7d8a6707e.jpg)
+
+
+# About
+An app to listen to music and mainly apply my studies in Typescript, Redux with Redusauce and Duck Pattern.
+
 # Getting Started with Vite!
 Next Generation Frontend Tooling. Get ready for a development environment that can finally catch up with you.
 
@@ -16,9 +22,6 @@ Builds the app for production to the build folder
 
 ### `npm run preview`
 Locally preview production build
-
-# About
-An app to listen to music and mainly apply my studies in Typescript, Redux with Redusauce and Duck Pattern.
 
 ## Learn More
 
