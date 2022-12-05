@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
-  const dispatch = useDispatch();
+  const playlists = useSelector(usePlaylists);
 
   const songs = [
     {
@@ -44,6 +44,9 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
       </NavItem>
       <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
       <Divider />
+      {playlists.map(({ name }) => (
+        <NavItem key={name}>{name}</NavItem>
+      ))}
     </Nav>
   );
 };
