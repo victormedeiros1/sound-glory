@@ -1,6 +1,6 @@
 import { Circle } from 'phosphor-react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addPlaylist, usePlaylists } from '../../store/ducks/playlist';
+import { useSelector } from 'react-redux';
+import { usePlaylists } from '../../store/ducks/playlist';
 import Divider from '../Divider';
 import Logo from '../Logo';
 import { Nav, NavItem } from './styles';

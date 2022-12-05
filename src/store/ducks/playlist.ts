@@ -12,10 +12,6 @@ interface Playlist {
   songs?: Song[];
 }
 
-// interface IINITIAL_STATE {
-//   playlists: Playlist[];
-// }
-
 const INITIAL_STATE: Playlist[] = [];
 
 const slicePlaylists = createSlice({
