@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerStyles = styled.div`
-  background-color: var(--dark);
+  background-color: var(--dark-1);
   width: 100%;
   min-height: 100vh;
   position: relative;

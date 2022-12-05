@@ -8,6 +8,14 @@ export const PlaylistStyles = styled.div`
 `;
 
 export const Songs = styled.ul`
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+
   ::-webkit-scrollbar {
     width: 0.5rem;
   }
@@ -20,11 +28,4 @@ export const Songs = styled.ul`
     background-color: var(--gray);
     border-radius: 0.5rem;
   }
-
-  height: calc(100vh - 200px);
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow);
 `;

@@ -1,7 +1,7 @@
 import { Action } from 'redux';
 
 export interface ISong {
-  id: number;
+  id: string;
   title: string;
   description: string;
   path: string;

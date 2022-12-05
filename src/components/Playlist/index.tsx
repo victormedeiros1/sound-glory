@@ -29,11 +29,47 @@ const Playlist: React.FC = () => {
       description: 'Trindad Cordona, Davido, Aisha, FIFA Sound',
       path: '/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3',
     },
+    {
+      id: 3,
+      title: 'Não Temos Tempo',
+      description: 'Nossa Toca',
+      path: '/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3',
+    },
+    {
+      id: 4,
+      title: 'Super Herói',
+      description: 'Hungria Hip Hop',
+      path: '/src/assets/audios/Hungria Hip Hop - Super Herói.mp3',
+    },
+    {
+      id: 5,
+      title: 'Hayya Hayya (Better Together) - FIFA World Cup 2022',
+      description: 'Trindad Cordona, Davido, Aisha, FIFA Sound',
+      path: '/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3',
+    },
+    {
+      id: 6,
+      title: 'Não Temos Tempo',
+      description: 'Nossa Toca',
+      path: '/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3',
+    },
+    {
+      id: 7,
+      title: 'Super Herói',
+      description: 'Hungria Hip Hop',
+      path: '/src/assets/audios/Hungria Hip Hop - Super Herói.mp3',
+    },
+    {
+      id: 8,
+      title: 'Hayya Hayya (Better Together) - FIFA World Cup 2022',
+      description: 'Trindad Cordona, Davido, Aisha, FIFA Sound',
+      path: '/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3',
+    },
   ];
 
-  const playSong = (song: ISong) => {
+  const playSong = (path: string) => {
     if (!songThatWasPlaying) {
-      const audio = new Audio(song.path);
+      const audio = new Audio(path);
       audio.play();
       setIsPlaying(true);
 
@@ -41,7 +77,7 @@ const Playlist: React.FC = () => {
     } else {
       songThatWasPlaying.pause();
 
-      const audio = new Audio(song.path);
+      const audio = new Audio(path);
       audio.play();
       setIsPlaying(true);
 
@@ -54,9 +90,14 @@ const Playlist: React.FC = () => {
       <Header />
 
       <Songs>
-        {songs.map((song) => (
-          <li key={song.id} onClick={() => playSong(song)}>
-            <Song title={song.title} description={song.description} />
+        {songs.map(({ id, title, description, path }) => (
+          <li key={id}>
+            <Song
+              title={title}
+              description={description}
+              path={path}
+              playSong={playSong}
+            />
           </li>
         ))}
       </Songs>

@@ -27,7 +27,7 @@ export const ModalStyles = styled.div`
   flex-direction: column;
   gap: 1rem;
   transform: translate(-50%, -50%);
-  background-color: var(--dark);
+  background-color: var(--dark-1);
   box-shadow: var(--shadow);
 
   width: 100%;
@@ -71,7 +71,7 @@ export const Input = styled.input`
   font-size: var(--f-16);
   font-weight: 700;
   padding: var(--p-10);
-  background-color: var(--dark);
+  background-color: var(--dark-1);
   border: 1px solid var(--primaryMain);
   border-radius: 0.25rem;
 `;

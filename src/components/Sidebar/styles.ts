@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   top: 0;
   left: 0;
 
-  background-color: var(--dark);
+  background-color: var(--dark-1);
   box-shadow: var(--shadow);
   padding: var(--p-32);
 `;
