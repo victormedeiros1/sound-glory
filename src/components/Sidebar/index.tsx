@@ -44,8 +44,8 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
       </NavItem>
       <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
       <Divider />
-      {playlists.map(({ name }) => (
-        <NavItem key={name}>{name}</NavItem>
+      {playlists.map(({ id, name }) => (
+        <NavItem key={id}>{name}</NavItem>
       ))}
     </Nav>
   );
