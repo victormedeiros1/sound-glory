@@ -32,23 +32,6 @@ export const Actions = styled.div`
   }
 `;
 
-export const DropDown = styled.div`
-  width: max-content;
-
-  display: flex;
-  flex-direction: column;
-
-  background-color: var(--dark-3);
-  color: var(--lightGray);
-  list-style: none;
-
-  position: absolute;
-  right: 2.25rem;
-
-  border-radius: 0.25rem;
-  box-shadow: var(--shadow);
-`;
-
 export const Infos = styled.div`
   width: 100%;
   display: flex;
@@ -64,13 +47,12 @@ export const Description = styled.span`
   color: var(--lightGray);
 `;
 
-export const SubMenuSection = styled.ul``;
-export const SubMenuItem = styled.li`
-  border-radius: 0.25rem;
-  font-size: var(--fs-12);
-  padding: 0.5rem;
+export const Count = styled.span`
+  text-align: center;
+  width: 1.4rem;
+  color: var(--lightGray);
+`;
 
-  &:hover {
-    background-color: var(--dark-2);
-  }
+export const Thumbnail = styled.img`
+  border: 1px solid var(--gray);
 `;
