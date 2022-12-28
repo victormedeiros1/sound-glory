@@ -9,7 +9,12 @@
   font-size: var(--fs-14);
   font-weight: 500;
   color: var(--lightGray);
+  user-select: none;
   padding: var(--p-8);
+}
+
+.dropdown-menu-item:hover {
+  background-color: var(--dark-2);
 }
 
 .dropdown-menu-arrow {
@@ -18,6 +23,7 @@
 
 .dropdown-menu-sub-trigger {
   display: flex;
+  cursor: initial !important;
 }
 
 .right-slot {
