@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import Controls from '../Controls';
-import Header from './Header';
-import Song from './Song';
-import { PlaylistStyles, Songs } from './styles';
-import { ISong } from '../../helpers/types';
+import { useState } from "react";
+import Controls from "../Controls";
+import Header from "./Header";
+import Song from "./Song";
+import { PlaylistStyles, Songs } from "./styles";
 
 const Playlist: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -13,60 +12,23 @@ const Playlist: React.FC = () => {
   const songs = [
     {
       id: 0,
-      title: 'Não Temos Tempo',
-      description: 'Nossa Toca',
-      path: '/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3',
+      title: "Não Temos Tempo",
+      description: "Nossa Toca",
+      path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
     },
     {
       id: 1,
-      title: 'Super Herói',
-      description: 'Hungria Hip Hop',
-      path: '/src/assets/audios/Hungria Hip Hop - Super Herói.mp3',
+      title: "Super Herói",
+      description: "Hungria Hip Hop",
+      path: "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3",
     },
     {
       id: 2,
-      title: 'Hayya Hayya (Better Together) - FIFA World Cup 2022',
-      description: 'Trindad Cordona, Davido, Aisha, FIFA Sound',
-      path: '/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3',
-    },
-    {
-      id: 3,
-      title: 'Não Temos Tempo',
-      description: 'Nossa Toca',
-      path: '/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3',
-    },
-    {
-      id: 4,
-      title: 'Super Herói',
-      description: 'Hungria Hip Hop',
-      path: '/src/assets/audios/Hungria Hip Hop - Super Herói.mp3',
-    },
-    {
-      id: 5,
-      title: 'Hayya Hayya (Better Together) - FIFA World Cup 2022',
-      description: 'Trindad Cordona, Davido, Aisha, FIFA Sound',
-      path: '/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3',
-    },
-    {
-      id: 6,
-      title: 'Não Temos Tempo',
-      description: 'Nossa Toca',
-      path: '/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3',
-    },
-    {
-      id: 7,
-      title: 'Super Herói',
-      description: 'Hungria Hip Hop',
-      path: '/src/assets/audios/Hungria Hip Hop - Super Herói.mp3',
-    },
-    {
-      id: 8,
-      title: 'Hayya Hayya (Better Together) - FIFA World Cup 2022',
-      description: 'Trindad Cordona, Davido, Aisha, FIFA Sound',
-      path: '/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3',
+      title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
+      description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
+      path: "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3",
     },
   ];
-
   const playSong = (path: string) => {
     if (!songThatWasPlaying) {
       const audio = new Audio(path);

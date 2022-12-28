@@ -1,21 +1,11 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { v4 as uuid } from 'uuid';
-interface Song {
-  title: string;
-  description: string;
-  path: string;
-}
-
-interface Playlist {
-  id: string;
-  name: string;
-  songs?: Song[];
-}
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuid } from "uuid";
+import { Playlist } from "../types/playlist";
 
 const INITIAL_STATE: Playlist[] = [];
 
 const slicePlaylists = createSlice({
-  name: 'playlist',
+  name: "playlist",
   initialState: INITIAL_STATE,
   reducers: {
     addPlaylist(state, { payload }: PayloadAction<string>) {

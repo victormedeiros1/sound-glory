@@ -1,9 +1,9 @@
-@import '@fontsource/barlow';
-@import '@fontsource/barlow/900.css';
-@import '@fontsource/quicksand';
+@import "@fontsource/barlow";
+@import "@fontsource/barlow/900.css";
+@import "@fontsource/quicksand";
 
 * {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 h1,
@@ -12,11 +12,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 :root {
   --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
   --fs-16: 1rem;
   --fs-128: 8rem;
 }

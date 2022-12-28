@@ -1,6 +1,8 @@
-import { DotsThreeVertical } from 'phosphor-react';
-import { useState } from 'react';
-import { Actions, Description, Left, Right, SongStyles, Title } from './styles';
+import React from "react";
+import { Description, Infos, SongStyles, Title } from "./styles";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
+import Dropdown from "../../Dropdown";
 
 interface Props {
   title: string;
@@ -10,27 +12,16 @@ interface Props {
 }
 
 const Song: React.FC<Props> = ({ title, description, path, playSong }) => {
-  const [isActionsOpen, setIsActionsOpen] = useState(false);
+  const playlists = useSelector((state: RootState) => state.playlists);
 
   return (
     <SongStyles>
-      <Left>
-        <DotsThreeVertical
-          onClick={() => setIsActionsOpen(!isActionsOpen)}
-          size={32}
-          color="#a3a3a3"
-          weight="light"
-        />
-        {isActionsOpen && (
-          <Actions>
-            <li>Copa do Mundo</li>
-          </Actions>
-        )}
-      </Left>
-      <Right onClick={() => playSong(path)}>
+      <Infos onClick={() => playSong(path)}>
         <Title>{title}</Title>
-        <Description>{description} </Description>
-      </Right>
+        <Description>{description}</Description>
+      </Infos>
+
+      <Dropdown playlists={playlists} />
     </SongStyles>
   );
 };

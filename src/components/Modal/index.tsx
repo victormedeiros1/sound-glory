@@ -1,6 +1,6 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { addPlaylist } from '../../store/ducks/playlist';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { addPlaylist } from "../../store/ducks/playlist";
 import {
   Pelicle,
   ModalStyles,
@@ -11,7 +11,7 @@ import {
   Submit,
   Title,
   Close,
-} from './styles';
+} from "./styles";
 
 interface Props {
   open: boolean;
@@ -26,6 +26,7 @@ const Modal: React.FC<Props> = ({ open, setOpen }) => {
     const name = e.target.elements.name.value;
 
     dispatch(addPlaylist(name));
+    setOpen(false);
   };
 
   return (
