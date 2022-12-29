@@ -24,7 +24,7 @@ const Song: React.FC<Props> = ({ id, title, description, path, playSong }) => {
 
   return (
     <SongStyles>
-      <Count>{id}</Count>
+      <Count>{id + 1}</Count>
       <Thumbnail src="https://picsum.photos/48/48" />
       <Infos onClick={() => playSong(path)}>
         <Title>{title}</Title>
