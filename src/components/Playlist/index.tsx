@@ -1,122 +1,44 @@
-import { useState } from "react";
 import Controls from "../Controls";
 import Header from "./Header";
 import Song from "./Song";
 import { PlaylistStyles, Songs } from "./styles";
+import { useDispatch } from "react-redux";
+import { Song as ISong } from "../../store/types/song";
+import { setSong } from "../../store/ducks/song";
 
 const Playlist: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [songThatWasPlaying, setSongThatWasPlaying] =
-    useState<HTMLAudioElement>(new Audio());
-
+  const dispatch = useDispatch();
   const songs = [
     {
       id: 0,
       title: "Não Temos Tempo",
       description: "Nossa Toca",
       path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
+      isPlaying: false,
     },
     {
       id: 1,
       title: "Super Herói",
       description: "Hungria Hip Hop",
       path: "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3",
+      isPlaying: false,
     },
     {
       id: 2,
       title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
       description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
       path: "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3",
-    },
-    {
-      id: 3,
-      title: "Não Temos Tempo",
-      description: "Nossa Toca",
-      path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
-    },
-    {
-      id: 4,
-      title: "Super Herói",
-      description: "Hungria Hip Hop",
-      path: "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3",
-    },
-    {
-      id: 5,
-      title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
-      description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
-      path: "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3",
-    },
-    {
-      id: 6,
-      title: "Não Temos Tempo",
-      description: "Nossa Toca",
-      path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
-    },
-    {
-      id: 7,
-      title: "Super Herói",
-      description: "Hungria Hip Hop",
-      path: "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3",
-    },
-    {
-      id: 8,
-      title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
-      description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
-      path: "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3",
-    },
-    {
-      id: 9,
-      title: "Não Temos Tempo",
-      description: "Nossa Toca",
-      path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
-    },
-    {
-      id: 10,
-      title: "Super Herói",
-      description: "Hungria Hip Hop",
-      path: "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3",
-    },
-    {
-      id: 11,
-      title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
-      description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
-      path: "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3",
-    },
-    {
-      id: 12,
-      title: "Não Temos Tempo",
-      description: "Nossa Toca",
-      path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
-    },
-    {
-      id: 13,
-      title: "Super Herói",
-      description: "Hungria Hip Hop",
-      path: "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3",
-    },
-    {
-      id: 14,
-      title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
-      description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
-      path: "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3",
+      isPlaying: false,
     },
   ];
-  const playSong = (path: string) => {
-    if (!songThatWasPlaying) {
-      const audio = new Audio(path);
-      audio.play();
-      setIsPlaying(true);
 
-      setSongThatWasPlaying(audio);
-    } else {
-      songThatWasPlaying.pause();
+  const playSong = (songToPlay: ISong) => {
+    const { id, title, description, path, isPlaying } = songToPlay;
 
-      const audio = new Audio(path);
-      audio.play();
-      setIsPlaying(true);
+    dispatch(setSong({ id, title, description, path, isPlaying: !isPlaying }));
 
-      setSongThatWasPlaying(audio);
-    }
+    const audio = new Audio(path);
+    audio.play();
   };
 
   return (
@@ -124,25 +46,19 @@ const Playlist: React.FC = () => {
       <Header />
 
       <Songs>
-        {songs.map(({ id, title, description, path }) => (
-          <li key={id}>
-            <Song
-              id={id}
-              title={title}
-              description={description}
-              path={path}
-              playSong={playSong}
-            />
+        {songs.map((song) => (
+          <li key={song.id}>
+            <Song song={song} playSong={playSong} />
           </li>
         ))}
       </Songs>
 
-      <Controls
+      {/* <Controls
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         setSongThatWasPlaying={setSongThatWasPlaying}
         songThatWasPlaying={songThatWasPlaying}
-      />
+      /> */}
     </PlaylistStyles>
   );
 };

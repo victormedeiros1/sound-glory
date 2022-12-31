@@ -10,25 +10,22 @@ import {
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import Dropdown from "../../Dropdown";
-
+import { Song as ISong } from "../../../store/types/song";
 interface Props {
-  id: number;
-  title: string;
-  description: string;
-  path: string;
-  playSong: (path: string) => void;
+  song: ISong;
+  playSong: (song: ISong) => void;
 }
 
-const Song: React.FC<Props> = ({ id, title, description, path, playSong }) => {
+const Song: React.FC<Props> = ({ song, playSong }) => {
   const playlists = useSelector((state: RootState) => state.playlists);
 
   return (
-    <SongStyles>
-      <Count>{id + 1}</Count>
+    <SongStyles onClick={() => playSong(song)}>
+      <Count>{song.id + 1}</Count>
       <Thumbnail src="https://picsum.photos/48/48" />
-      <Infos onClick={() => playSong(path)}>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
+      <Infos>
+        <Title>{song.title}</Title>
+        <Description>{song.description}</Description>
       </Infos>
 
       <Dropdown playlists={playlists} />
