@@ -1,21 +1,18 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 import { Playlist } from "../types/playlist";
 
-const INITIAL_STATE: Playlist[] = [];
+const initialState: Playlist[] = [];
 
-const slicePlaylists = createSlice({
+const playlistsSlice = createSlice({
   name: "playlist",
-  initialState: INITIAL_STATE,
+  initialState,
   reducers: {
-    addPlaylist(state, { payload }: PayloadAction<string>) {
-      return [...state, { id: uuid(), name: payload }];
+    addPlaylist(state, action) {
+      return [...state, { id: uuid(), name: action.payload }];
     },
   },
 });
 
-export default slicePlaylists.reducer;
-export const { addPlaylist } = slicePlaylists.actions;
-export const usePlaylists = (state: any) => {
-  return state.playlists as Playlist[];
-};
+export default playlistsSlice.reducer;
+export const { addPlaylist } = playlistsSlice.actions;
