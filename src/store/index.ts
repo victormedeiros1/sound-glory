@@ -1,14 +1,18 @@
-import { configureStore } from '@reduxjs/toolkit';
-import slicePlaylists from './ducks/playlist';
+import { configureStore } from "@reduxjs/toolkit";
+import playlistsSlice from "./ducks/playlist";
+import songSlice from "./ducks/song";
 
 export const store = configureStore({
   reducer: {
-    playlists: slicePlaylists,
+    playlists: playlistsSlice,
+    song: songSlice,
   },
 });
 
+console.log("STORE", store.getState());
+
 store.subscribe(() => {
-  console.log(store.getState());
+  console.log("SUBSCRIBE", store.getState());
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
