@@ -5,6 +5,9 @@ import { PlaylistStyles, Songs } from "./styles";
 import { useDispatch } from "react-redux";
 import { Song as ISong } from "../../store/types/song";
 import { setSong } from "../../store/ducks/song";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useState } from "react";
+import { store } from "../../store";
 
 const Playlist: React.FC = () => {
   const dispatch = useDispatch();
@@ -31,14 +34,30 @@ const Playlist: React.FC = () => {
       isPlaying: false,
     },
   ];
+  const [previousSong, setPreviousSong] = useState<HTMLAudioElement>(
+    new Audio()
+  );
 
   const playSong = (songToPlay: ISong) => {
     const { id, title, description, path, isPlaying } = songToPlay;
 
-    dispatch(setSong({ id, title, description, path, isPlaying: !isPlaying }));
+    if (!previousSong) {
+      const audio = new Audio(path);
+      audio.play();
 
-    const audio = new Audio(path);
-    audio.play();
+      setPreviousSong(audio);
+
+      dispatch(setSong({ id, title, description, path, isPlaying: true }));
+    } else {
+      previousSong.pause();
+
+      const audio = new Audio(path);
+      audio.play();
+
+      dispatch(setSong({ id, title, description, path, isPlaying: true }));
+      setPreviousSong(audio);
+      console.log(store.getState());
+    }
   };
 
   return (
@@ -56,8 +75,8 @@ const Playlist: React.FC = () => {
       {/* <Controls
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
-        setSongThatWasPlaying={setSongThatWasPlaying}
-        songThatWasPlaying={songThatWasPlaying}
+        setPreviousSong={setPreviousSong}
+        previousSong={previousSong}
       /> */}
     </PlaylistStyles>
   );

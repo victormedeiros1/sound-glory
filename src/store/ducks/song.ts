@@ -3,9 +3,9 @@ import { Song } from "../types/song";
 
 const initialState: Song = {
   id: 0,
-  title: "",
-  description: "",
-  path: "",
+  title: "Não Temos Tempo",
+  description: "Nossa Toca",
+  path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
   isPlaying: false,
 };
 
