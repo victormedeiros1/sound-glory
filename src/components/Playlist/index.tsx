@@ -5,7 +5,6 @@ import { PlaylistStyles, Songs } from "./styles";
 import { useDispatch } from "react-redux";
 import { Song as ISong } from "../../store/types/song";
 import { setSong } from "../../store/ducks/song";
-import { useAppSelector } from "../../hooks/useAppSelector";
 import { useState } from "react";
 import { store } from "../../store";
 
