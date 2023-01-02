@@ -14,25 +14,30 @@ const Playlist: React.FC = () => {
       title: "Não Temos Tempo",
       description: "Nossa Toca",
       path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
+      audio: new Audio("/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3"),
+      isPlaying: false,
     },
     {
       id: 1,
       title: "Super Herói",
       description: "Hungria Hip Hop",
       path: "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3",
+      audio: new Audio("/src/assets/audios/Hungria Hip Hop - Super Herói.mp3"),
+      isPlaying: false,
     },
     {
       id: 2,
       title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
       description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
       path: "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3",
+      audio: new Audio(
+        "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3"
+      ),
+      isPlaying: false,
     },
   ];
 
   const dispatch = useDispatch();
-  const [currentSong, setCurrentSong] = useState<HTMLAudioElement>(
-    new Audio(songs[0].path)
-  );
 
   return (
     <PlaylistStyles>
@@ -41,12 +46,12 @@ const Playlist: React.FC = () => {
       <Songs>
         {songs.map((song) => (
           <li key={song.id}>
-            <Song song={song} setCurrentSong={setCurrentSong} />
+            <Song song={song} />
           </li>
         ))}
       </Songs>
 
-      <Controls currentSong={currentSong} />
+      {/* <Controls /> */}
     </PlaylistStyles>
   );
 };
