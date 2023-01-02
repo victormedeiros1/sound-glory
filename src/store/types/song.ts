@@ -3,4 +3,6 @@ export interface Song {
   title: string;
   description: string;
   path: string;
+  audio: HTMLAudioElement;
+  isPlaying: boolean;
 }
