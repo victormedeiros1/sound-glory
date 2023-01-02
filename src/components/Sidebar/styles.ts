@@ -19,7 +19,7 @@ export const Nav = styled.nav<Props>`
 
   transition: 0.5s;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     position: absolute;
     left: ${(props) => (props.navbarIsOpen ? 0 : -168)}px;
   }
@@ -57,8 +57,9 @@ export const ToggleNav = styled.div<Props>`
   transform: ${(props) =>
     props.navbarIsOpen ? "rotate(180deg)" : "rotate(0deg)"};
   transition: 0.5s;
+  user-select: none;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     display: initial;
   }
 `;

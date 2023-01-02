@@ -39,6 +39,7 @@ export const Infos = styled.div`
 `;
 
 export const Title = styled.span`
+  font-size: var(--fs-16);
   color: var(--lightGray);
 `;
 
