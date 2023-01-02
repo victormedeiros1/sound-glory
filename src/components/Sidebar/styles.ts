@@ -70,4 +70,8 @@ export const NavArrow = styled.li`
   height: 100%;
   cursor: pointer;
   user-select: none;
+
+  svg {
+    user-select: none;
+  }
 `;
