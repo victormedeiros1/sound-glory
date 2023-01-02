@@ -26,8 +26,12 @@ const songSlice = createSlice({
     restartSong: (state) => {
       (state.audio.currentTime = 0), (state.isPlaying = true);
     },
-    nextSong: (state) => {},
-    previousSong: (state) => {},
+    nextSong: (state, { payload }) => {
+      return { ...state, ...payload };
+    },
+    previousSong: (state, { payload }) => {
+      return { ...state, ...payload };
+    },
   },
 });
 
