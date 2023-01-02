@@ -7,6 +7,10 @@ export const store = configureStore({
     playlists: playlistsSlice,
     song: songSlice,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 console.log("STORE", store.getState());
