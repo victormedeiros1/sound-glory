@@ -1,10 +1,17 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ContainerStyles = styled.div`
+  display: flex;
+  gap: 1rem;
+
   background-color: var(--dark-1);
   width: 100%;
-  min-height: 100vh;
+  max-height: 100vh;
   position: relative;
-  padding: 1rem 1rem 0 13.5rem;
+  padding: var(--p-16) var(--p-16) 0 var(--p-16);
   margin: 0 auto;
+
+  @media (max-width: 1000px) {
+    padding: var(--p-16) var(--p-16) 0 var(--p-48);
+  }
 `;

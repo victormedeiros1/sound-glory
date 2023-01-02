@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PlaylistStyles = styled.div`
   display: flex;
-  height: calc(100vh - 1rem);
+  width: 100%;
   flex-direction: column;
   gap: 1rem;
 `;
 
 export const Songs = styled.ul`
-  height: calc(100vh - 200px);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;

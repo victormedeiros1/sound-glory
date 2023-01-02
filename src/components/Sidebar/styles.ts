@@ -1,20 +1,34 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Nav = styled.nav`
+interface Props {
+  navbarIsOpen: boolean;
+}
+
+export const Nav = styled.nav<Props>`
+  position: relative;
   max-width: 12.5rem;
+  width: 100%;
   min-height: 100vh;
 
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  position: absolute;
-  top: 0;
-  left: 0;
+  flex-direction: row;
 
   background-color: var(--dark-1);
   box-shadow: var(--shadow);
   padding: var(--p-32);
+
+  transition: 0.5s;
+
+  @media (max-width: 1000px) {
+    position: absolute;
+    left: ${(props) => (props.navbarIsOpen ? 0 : -168)}px;
+  }
+`;
+
+export const NavContent = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 `;
 
 export const NavItem = styled.button`
@@ -32,4 +46,26 @@ export const NavItem = styled.button`
   :hover {
     color: var(--light);
   }
+`;
+
+export const ToggleNav = styled.div<Props>`
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0.25rem;
+  height: 100%;
+  transform: ${(props) =>
+    props.navbarIsOpen ? "rotate(180deg)" : "rotate(0deg)"};
+  transition: 0.5s;
+
+  @media (max-width: 1000px) {
+    display: initial;
+  }
+`;
+
+export const NavArrow = styled.li`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
 `;
