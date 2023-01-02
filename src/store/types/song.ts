@@ -3,5 +3,4 @@ export interface Song {
   title: string;
   description: string;
   path: string;
-  isPlaying: boolean;
 }

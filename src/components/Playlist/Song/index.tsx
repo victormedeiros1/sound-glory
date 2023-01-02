@@ -13,14 +13,14 @@ import Dropdown from "../../Dropdown";
 import { Song as ISong } from "../../../store/types/song";
 interface Props {
   song: ISong;
-  playSong: (song: ISong) => void;
+  setCurrentSong: (path: HTMLAudioElement) => void;
 }
 
-const Song: React.FC<Props> = ({ song, playSong }) => {
+const Song: React.FC<Props> = ({ song, setCurrentSong }) => {
   const playlists = useSelector((state: RootState) => state.playlists);
 
   return (
-    <SongStyles onClick={() => playSong(song)}>
+    <SongStyles onClick={() => setCurrentSong(new Audio(song.path))}>
       <Count>{song.id + 1}</Count>
       <Thumbnail src="https://picsum.photos/48/48" />
       <Infos>

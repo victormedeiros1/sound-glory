@@ -6,7 +6,6 @@ const initialState: Song = {
   title: "Não Temos Tempo",
   description: "Nossa Toca",
   path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
-  isPlaying: false,
 };
 
 const songSlice = createSlice({
