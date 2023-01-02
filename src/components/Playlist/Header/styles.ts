@@ -11,6 +11,18 @@ export const Thumbnail = styled.img`
   width: 100%;
   max-width: 200px;
   border-radius: 8px;
+
+  @media (max-width: 1200px) {
+    max-width: 180px;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 160px;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 100px;
+  }
 `;
 
 export const Title = styled.h1`
