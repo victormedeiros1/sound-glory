@@ -51,7 +51,7 @@ const Playlist: React.FC = () => {
         ))}
       </Songs>
 
-      {/* <Controls /> */}
+      <Controls />
     </PlaylistStyles>
   );
 };

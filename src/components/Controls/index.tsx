@@ -8,35 +8,14 @@ import {
 } from "phosphor-react";
 import { useState } from "react";
 import { ControlsStyles } from "./styles";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { RootState } from "../../store";
+import { pauseSong, playSong } from "../../store/ducks/song";
 
-interface Props {
-  currentSong: HTMLAudioElement;
-}
-
-const Controls: React.FC<Props> = ({ currentSong }) => {
-  const [previousSong, setPreviousSong] = useState<HTMLAudioElement>(
-    new Audio()
-  );
-
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const play = () => {
-    setIsPlaying(true);
-
-    if (!previousSong) {
-      currentSong.play();
-      setPreviousSong(currentSong);
-    } else {
-      previousSong.pause();
-      currentSong.play();
-      setPreviousSong(currentSong);
-    }
-  };
-
-  const pause = () => {
-    setIsPlaying(false);
-    currentSong.pause();
-  };
+const Controls: React.FC = () => {
+  const dispatch = useDispatch();
+  const { isPlaying } = useAppSelector((state: RootState) => state.song);
 
   return (
     <ControlsStyles>
@@ -44,9 +23,9 @@ const Controls: React.FC<Props> = ({ currentSong }) => {
       <Rewind size={32} />
 
       {isPlaying ? (
-        <Pause onClick={pause} size={32} />
+        <Pause onClick={() => dispatch(pauseSong())} size={32} />
       ) : (
-        <Play onClick={play} size={32} />
+        <Play onClick={() => dispatch(playSong())} size={32} />
       )}
 
       <FastForward size={32} />

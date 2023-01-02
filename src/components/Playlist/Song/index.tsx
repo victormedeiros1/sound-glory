@@ -7,7 +7,6 @@ import {
   Thumbnail,
   Title,
 } from "./styles";
-import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import Dropdown from "../../Dropdown";
 import { Song as ISong } from "../../../store/types/song";
@@ -18,16 +17,15 @@ import {
   setSong,
 } from "../../../store/ducks/song";
 import { useDispatch } from "react-redux";
+import { useAppSelector } from "../../../hooks/useAppSelector";
 interface Props {
   song: ISong;
 }
 
 const Song: React.FC<Props> = ({ song }) => {
   const dispatch = useDispatch();
-  const playlists = useSelector((state: RootState) => state.playlists);
-  const { id, isPlaying, audio } = useSelector(
-    (state: RootState) => state.song
-  );
+  const playlists = useAppSelector((state: RootState) => state.playlists);
+  const { id, isPlaying } = useAppSelector((state: RootState) => state.song);
 
   const handleClick = () => {
     if (isPlaying) {
