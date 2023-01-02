@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import playlistsSlice from "./ducks/playlist";
 import songSlice from "./ducks/song";
+import songsSlice from "./ducks/songs";
 
 export const store = configureStore({
   reducer: {
+    songs: songsSlice,
     playlists: playlistsSlice,
     song: songSlice,
   },

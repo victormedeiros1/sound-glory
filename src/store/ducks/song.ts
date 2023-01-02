@@ -26,8 +26,17 @@ const songSlice = createSlice({
     restartSong: (state) => {
       (state.audio.currentTime = 0), (state.isPlaying = true);
     },
+    nextSong: (state) => {},
+    previousSong: (state) => {},
   },
 });
 
 export default songSlice.reducer;
-export const { setSong, playSong, pauseSong, restartSong } = songSlice.actions;
+export const {
+  setSong,
+  playSong,
+  pauseSong,
+  restartSong,
+  nextSong,
+  previousSong,
+} = songSlice.actions;
