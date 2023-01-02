@@ -8,7 +8,7 @@ const playlistsSlice = createSlice({
   name: "playlist",
   initialState,
   reducers: {
-    addPlaylist(state, action) {
+    addPlaylist: (state, action) => {
       return [...state, { id: uuid(), name: action.payload }];
     },
   },
