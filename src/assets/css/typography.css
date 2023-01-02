@@ -21,3 +21,22 @@ h6 {
   --fs-16: 1rem;
   --fs-128: 8rem;
 }
+
+@media (max-width: 1200px) {
+  :root {
+    --fs-128: 6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --fs-128: 4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --fs-16: 0.875rem;
+    --fs-128: 2rem;
+  }
+}
