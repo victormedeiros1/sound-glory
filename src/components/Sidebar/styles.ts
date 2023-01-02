@@ -69,4 +69,5 @@ export const NavArrow = styled.li`
   align-items: center;
   height: 100%;
   cursor: pointer;
+  user-select: none;
 `;
