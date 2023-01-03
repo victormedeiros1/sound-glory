@@ -5,7 +5,6 @@ const initialState: Song = {
   id: 0,
   title: "Não Temos Tempo",
   description: "Nossa Toca",
-  path: "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3",
   audio: new Audio("/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3"),
   isPlaying: false,
 };
