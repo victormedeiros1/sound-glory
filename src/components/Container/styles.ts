@@ -6,7 +6,7 @@ export const ContainerStyles = styled.div`
 
   background-color: var(--dark-1);
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
   position: relative;
   padding: var(--p-16) var(--p-16) 0 var(--p-16);
   margin: 0 auto;
