@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Song } from "../types/song";
-
+import song1 from "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3";
 const initialState: Song = {
   id: 0,
   title: "Não Temos Tempo",
   description: "Nossa Toca",
-  audio: new Audio("/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3"),
+  audio: new Audio(song1),
   isPlaying: false,
 };
 
