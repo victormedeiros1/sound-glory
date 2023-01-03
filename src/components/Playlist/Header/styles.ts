@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const HeaderStyles = styled.header`
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   box-shadow: var(--shadow);
 `;
 
@@ -28,8 +27,30 @@ export const Thumbnail = styled.img`
 export const Title = styled.h1`
   text-shadow: var(--shadow);
   color: var(--primaryMain);
-  font-size: var(--fs-128);
-  line-height: var(--lh-128);
+  font-size: var(--fs-64);
+  line-height: var(--lh-64);
   font-weight: 900;
-  margin-bottom: var(--m-16);
+  margin-top: var(--m-16);
+  margin-bottom: var(--m-8);
+
+  @media (max-width: 576px) {
+    font-weight: 700;
+  }
+`;
+
+export const Infos = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Details = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.5rem;
+`;
+
+export const DetailsItem = styled.li`
+  color: var(--primaryMain);
+  font-size: var(--fs-16);
 `;
