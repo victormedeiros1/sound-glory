@@ -32,6 +32,7 @@ const Song: React.FC<Props> = ({ song }) => {
     if (isPlaying) {
       if (id === song.id) {
         dispatch(pauseSong());
+        dispatch(restartSong());
       } else {
         dispatch(pauseSong());
         dispatch(restartSong());
