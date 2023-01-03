@@ -48,7 +48,7 @@ const Song: React.FC<Props> = ({ song }) => {
     <SongStyles onClick={handleClick}>
       <Count>{song.id + 1}</Count>
       <Thumbnail src="https://picsum.photos/48/48" />
-      {<Bars isActive={song.id === id} />}
+      {<Bars isActive={isPlaying && id === song.id} />}
       <Infos>
         <Title>{song.title}</Title>
         <Description>{song.description}</Description>
