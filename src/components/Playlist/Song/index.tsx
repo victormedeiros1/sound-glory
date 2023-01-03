@@ -18,6 +18,7 @@ import {
 } from "../../../store/ducks/song";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../../hooks/useAppSelector";
+import Bars from "../../Bars";
 interface Props {
   song: ISong;
 }
@@ -47,6 +48,7 @@ const Song: React.FC<Props> = ({ song }) => {
     <SongStyles onClick={handleClick}>
       <Count>{song.id + 1}</Count>
       <Thumbnail src="https://picsum.photos/48/48" />
+      {<Bars isActive={song.id === id} />}
       <Infos>
         <Title>{song.title}</Title>
         <Description>{song.description}</Description>
