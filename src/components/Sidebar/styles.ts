@@ -7,7 +7,6 @@ interface Props {
 export const Nav = styled.nav<Props>`
   position: relative;
   max-width: 12.5rem;
-  width: 100%;
   min-height: 100vh;
 
   display: flex;
@@ -20,9 +19,10 @@ export const Nav = styled.nav<Props>`
   transition: 0.5s;
 
   @media (max-width: 1200px) {
+    padding: var(--p-16);
     position: absolute;
     top: 0;
-    left: ${(props) => (props.navbarIsOpen ? 0 : -11.5)}rem;
+    left: ${(props) => (props.navbarIsOpen ? 0 : -9.5)}rem;
   }
 `;
 
