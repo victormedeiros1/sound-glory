@@ -3,19 +3,21 @@ import styled from "styled-components";
 export const SongStyles = styled.div`
   display: flex;
   align-items: center;
+  gap: var(--g-16);
   width: 100%;
   user-select: none;
-
-  gap: var(--g-16);
-
   border-radius: 0.5rem;
   border: 1px solid var(--dark-1);
-
   cursor: pointer;
   padding: var(--p-16);
 
   &:hover {
     border: 1px solid var(--dark-3);
+  }
+
+  @media (max-width: 576px) {
+    padding: var(--p-8);
+    gap: var(--g-8);
   }
 `;
 
@@ -23,7 +25,6 @@ export const Actions = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-
   border-radius: 0.25rem;
   border: 1px solid transparent;
 
@@ -49,11 +50,13 @@ export const Description = styled.span`
 `;
 
 export const Count = styled.span`
+  font-size: var(--fs-16);
   text-align: center;
   width: 1.4rem;
   color: var(--lightGray);
 `;
 
 export const Thumbnail = styled.img`
+  width: 2rem;
   border: 1px solid var(--gray);
 `;

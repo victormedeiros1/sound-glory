@@ -12,7 +12,7 @@ const Dropdown: React.FC<Props> = ({ playlists }) => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button className="IconButton" aria-label="Customise options">
-          <DotsThreeVertical size={32} color="#a3a3a3" weight="light" />
+          <DotsThreeVertical size={24} color="#a3a3a3" weight="light" />
         </button>
       </DropdownMenu.Trigger>
 

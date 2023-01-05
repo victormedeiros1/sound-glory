@@ -21,7 +21,8 @@ export const Nav = styled.nav<Props>`
 
   @media (max-width: 1200px) {
     position: absolute;
-    left: ${(props) => (props.navbarIsOpen ? 0 : -10.5)}rem;
+    top: 0;
+    left: ${(props) => (props.navbarIsOpen ? 0 : -11.5)}rem;
   }
 `;
 
@@ -52,7 +53,7 @@ export const ToggleNav = styled.div<Props>`
   display: none;
   position: absolute;
   top: 0;
-  right: 0.25rem;
+  right: 0rem;
   height: 100%;
   transform: ${(props) =>
     props.navbarIsOpen ? "rotate(180deg)" : "rotate(0deg)"};
