@@ -4,7 +4,7 @@ export const PlaylistStyles = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--g-16);
 `;
 
 export const Songs = styled.ul`

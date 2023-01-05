@@ -28,7 +28,7 @@ export const Nav = styled.nav<Props>`
 export const NavContent = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--g-8);
 `;
 
 export const NavItem = styled.button`
@@ -41,7 +41,7 @@ export const NavItem = styled.button`
   font-size: var(--fs-12);
   font-weight: 700;
   letter-spacing: 1px;
-  gap: 0.5rem;
+  gap: var(--g-8);
 
   :hover {
     color: var(--light);

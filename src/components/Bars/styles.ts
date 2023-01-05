@@ -9,7 +9,7 @@ export const BarsStyles = styled.div<Props>`
   flex-direction: row;
   align-items: end;
   height: 2rem;
-  gap: 0.25rem;
+  gap: var(--g-4);
 
   div {
     width: 0.25rem;

@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import { X } from 'phosphor-react';
+import styled from "styled-components";
+import { X } from "phosphor-react";
 
 interface Props {
   open: boolean;
 }
 
 export const Pelicle = styled.div<Props>`
-  display: ${(props) => (props.open ? 'initial' : 'none')};
+  display: ${(props) => (props.open ? "initial" : "none")};
 
   position: absolute;
   top: 0;
@@ -25,7 +25,7 @@ export const ModalStyles = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--g-4);
   transform: translate(-50%, -50%);
   background-color: var(--dark-1);
   box-shadow: var(--shadow);
@@ -54,12 +54,12 @@ export const Title = styled.span`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--g-24);
 `;
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--g-4);
 `;
 export const Label = styled.label`
   color: var(--primaryMain);

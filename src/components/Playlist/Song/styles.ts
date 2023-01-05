@@ -6,7 +6,7 @@ export const SongStyles = styled.div`
   width: 100%;
   user-select: none;
 
-  gap: 1rem;
+  gap: var(--g-16);
 
   border-radius: 0.5rem;
   border: 1px solid var(--dark-1);

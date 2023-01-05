@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderStyles = styled.header`
   display: flex;
-  gap: 2rem;
+  gap: var(--g-32);
   box-shadow: var(--shadow);
 `;
 
@@ -47,7 +47,7 @@ export const Details = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 0.5rem;
+  gap: var(--g-8);
 `;
 
 export const DetailsItem = styled.li`

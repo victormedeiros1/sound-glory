@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerStyles = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: var(--g-16);
 
   background-color: var(--dark-1);
   width: 100%;
