@@ -7,15 +7,18 @@ import {
   Thumbnail,
   Title,
 } from "./styles";
+import { useAppSelector } from "../../../hooks/useAppSelector";
 
 const Header: React.FC = () => {
+  const songs = useAppSelector((state) => state.songs);
+
   return (
     <HeaderStyles>
       <Thumbnail src="https://picsum.photos/200/200" />
       <Infos>
-        <Title>PRA OUVIR NO BETA</Title>
+        <Title>FOR LISTEN DURING THE BETA</Title>
         <Details>
-          <DetailsItem>3 músicas</DetailsItem>
+          <DetailsItem>{songs.length} songs</DetailsItem>
           <Circle size={6} weight="fill" color="#a36238" />
           <DetailsItem>10min 15s</DetailsItem>
         </Details>

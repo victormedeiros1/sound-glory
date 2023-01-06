@@ -20,7 +20,7 @@ const Dropdown: React.FC<Props> = ({ playlists }) => {
         <DropdownMenu.Content className="dropdown-menu-content" sideOffset={5}>
           <DropdownMenu.Sub>
             <DropdownMenu.SubTrigger className="dropdown-menu-sub-trigger">
-              Adicionar à playlist
+              Add to playlist
               <div className="right-slot">
                 <CaretRight size={14} />
               </div>
