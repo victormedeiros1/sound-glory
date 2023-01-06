@@ -10,4 +10,13 @@ export const ControlsStyles = styled.div`
   @media (max-width: 576px) {
     padding: var(--p-16);
   }
+
+  svg {
+    transition-duration: 0.1s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
 `;

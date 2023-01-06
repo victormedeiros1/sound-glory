@@ -1,9 +1,9 @@
 import {
   Shuffle,
-  Rewind,
+  SkipBack,
   Play,
   Pause,
-  FastForward,
+  SkipForward,
   Repeat,
 } from "phosphor-react";
 import { ControlsStyles } from "./styles";
@@ -39,17 +39,21 @@ const Controls: React.FC = () => {
 
   return (
     <ControlsStyles>
-      <Shuffle size={32} />
-      <Rewind onClick={handlePreviousSong} size={32} />
+      <Shuffle size={24} color="#111111" />
+      <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
 
       {isPlaying ? (
-        <Pause onClick={() => dispatch(pauseSong())} size={32} />
+        <Pause
+          size={24}
+          color="#111111"
+          onClick={() => dispatch(pauseSong())}
+        />
       ) : (
-        <Play onClick={() => dispatch(playSong())} size={32} />
+        <Play size={24} color="#111111" onClick={() => dispatch(playSong())} />
       )}
 
-      <FastForward onClick={handleNextSong} size={32} />
-      <Repeat size={32} />
+      <SkipForward size={24} color="#111111" onClick={handleNextSong} />
+      <Repeat size={24} color="#111111" />
     </ControlsStyles>
   );
 };
