@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Shuffle,
   SkipBack,
@@ -6,7 +7,7 @@ import {
   SkipForward,
   Repeat,
 } from "phosphor-react";
-import { ControlsStyles } from "./styles";
+import { ControlsStyles, Progress, ProgressBar } from "./styles";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { RootState } from "../../store";
@@ -19,8 +20,11 @@ import {
 
 const Controls: React.FC = () => {
   const dispatch = useDispatch();
-  const { id, isPlaying } = useAppSelector((state: RootState) => state.song);
-
+  const [currentTime, setCurrentTime] = useState(0);
+  const { id, isPlaying, audio } = useAppSelector(
+    (state: RootState) => state.song
+  );
+  let duration = Math.round(audio.duration);
   const songs = useAppSelector((state) => state.songs);
 
   const handleNextSong = () => {
@@ -37,8 +41,28 @@ const Controls: React.FC = () => {
     dispatch(playSong());
   };
 
+  useEffect(() => {
+    console.log(isPlaying);
+    if (isPlaying) {
+      const interval = setInterval(() => {
+        setCurrentTime(Math.round(audio.currentTime));
+      }, 1000);
+
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying]);
+  // setTimeout(() => {
+  //   clearInterval(interval);
+  // }, 5000);
+
   return (
     <ControlsStyles>
+      <Progress>
+        {currentTime}
+        <ProgressBar type="range" min={0} max={duration} />
+        {duration}
+      </Progress>
+
       <Shuffle size={24} color="#111111" />
       <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
 
