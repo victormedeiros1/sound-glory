@@ -35,28 +35,25 @@ const Progress: React.FC<Props> = ({ audio, isPlaying }) => {
   }, [isPlaying]);
 
   const handleRange = (e: any) => {
-    setTimeout(() => {
-      setCurrentTime(e);
-      audio.currentTime = e;
-    }, 100);
+    setCurrentTime(e);
+    audio.currentTime = e;
   };
 
   return (
     <ProgressWrapper>
       <span>{convertToTime(currentTime)}</span>
       <SliderRoot
-        className="SliderRoot"
         defaultValue={[currentTime]}
         min={0}
         max={duration}
         step={1}
         onValueCommit={handleRange}
-        aria-label="Volume"
+        aria-label="Song time"
       >
-        <SliderTrack className="SliderTrack">
-          <SliderRange className="SliderRange" />
+        <SliderTrack>
+          <SliderRange />
         </SliderTrack>
-        <SliderThumb className="SliderThumb" />
+        <SliderThumb />
       </SliderRoot>
       <span>{convertToTime(duration)}</span>
     </ProgressWrapper>

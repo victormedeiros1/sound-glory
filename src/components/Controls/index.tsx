@@ -16,7 +16,8 @@ import {
   playSong,
   restartSong,
 } from "../../store/ducks/song";
-import ProgressBar from "./components/ProgressBar";
+import Progress from "./components/Progress";
+import Volume from "./components/Volume";
 
 const Controls: React.FC = () => {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const Controls: React.FC = () => {
 
   return (
     <ControlsStyles>
-      <ProgressBar audio={audio} isPlaying={isPlaying} />
+      <Progress audio={audio} isPlaying={isPlaying} />
 
       <Buttons>
         <Shuffle size={24} color="#111111" />
@@ -64,6 +65,7 @@ const Controls: React.FC = () => {
 
         <SkipForward size={24} color="#111111" onClick={handleNextSong} />
         <Repeat size={24} color="#111111" />
+        <Volume audio={audio} isPlaying={isPlaying} />
       </Buttons>
     </ControlsStyles>
   );

@@ -23,6 +23,7 @@ export const ControlsStyles = styled.div`
 `;
 
 export const Buttons = styled.div`
+  position: relative;
   display: flex;
   gap: var(--g-8);
 `;
