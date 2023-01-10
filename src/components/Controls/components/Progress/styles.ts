@@ -50,8 +50,8 @@ export const SliderRange = styled(Slider.Range)`
 export const SliderThumb = styled(Slider.Thumb)`
   cursor: pointer;
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
   background-color: var(--light);
   border-radius: 10px;
 
