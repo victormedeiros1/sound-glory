@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   Shuffle,
   SkipBack,
@@ -7,7 +6,7 @@ import {
   SkipForward,
   Repeat,
 } from "phosphor-react";
-import { ControlsStyles, Progress, ProgressBar } from "./styles";
+import { Buttons, ControlsStyles } from "./styles";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { RootState } from "../../store";
@@ -17,14 +16,14 @@ import {
   playSong,
   restartSong,
 } from "../../store/ducks/song";
+import ProgressBar from "./components/ProgressBar";
 
 const Controls: React.FC = () => {
   const dispatch = useDispatch();
-  const [currentTime, setCurrentTime] = useState(0);
+
   const { id, isPlaying, audio } = useAppSelector(
     (state: RootState) => state.song
   );
-  let duration = Math.round(audio.duration);
   const songs = useAppSelector((state) => state.songs);
 
   const handleNextSong = () => {
@@ -41,43 +40,31 @@ const Controls: React.FC = () => {
     dispatch(playSong());
   };
 
-  useEffect(() => {
-    console.log(isPlaying);
-    if (isPlaying) {
-      const interval = setInterval(() => {
-        setCurrentTime(Math.round(audio.currentTime));
-      }, 1000);
-
-      return () => clearInterval(interval);
-    }
-  }, [isPlaying]);
-  // setTimeout(() => {
-  //   clearInterval(interval);
-  // }, 5000);
-
   return (
     <ControlsStyles>
-      <Progress>
-        {currentTime}
-        <ProgressBar type="range" min={0} max={duration} />
-        {duration}
-      </Progress>
+      <ProgressBar audio={audio} isPlaying={isPlaying} />
 
-      <Shuffle size={24} color="#111111" />
-      <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
+      <Buttons>
+        <Shuffle size={24} color="#111111" />
+        <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
 
-      {isPlaying ? (
-        <Pause
-          size={24}
-          color="#111111"
-          onClick={() => dispatch(pauseSong())}
-        />
-      ) : (
-        <Play size={24} color="#111111" onClick={() => dispatch(playSong())} />
-      )}
+        {isPlaying ? (
+          <Pause
+            size={24}
+            color="#111111"
+            onClick={() => dispatch(pauseSong())}
+          />
+        ) : (
+          <Play
+            size={24}
+            color="#111111"
+            onClick={() => dispatch(playSong())}
+          />
+        )}
 
-      <SkipForward size={24} color="#111111" onClick={handleNextSong} />
-      <Repeat size={24} color="#111111" />
+        <SkipForward size={24} color="#111111" onClick={handleNextSong} />
+        <Repeat size={24} color="#111111" />
+      </Buttons>
     </ControlsStyles>
   );
 };

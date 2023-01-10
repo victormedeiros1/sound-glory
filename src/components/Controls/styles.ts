@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const ControlsStyles = styled.div`
-  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: var(--g-8);
   background-image: var(--primaryGradient);
-  padding: var(--p-32);
+  padding: var(--p-16) var(--p-24) var(--p-24) var(--p-24);
 
   @media (max-width: 576px) {
     padding: var(--p-16);
@@ -22,18 +22,7 @@ export const ControlsStyles = styled.div`
   }
 `;
 
-export const Progress = styled.div`
+export const Buttons = styled.div`
   display: flex;
-  gap: var(--g-16);
-  padding: 0 var(--p-8);
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-`;
-
-export const ProgressBar = styled.input`
-  width: 100%;
+  gap: var(--g-8);
 `;
