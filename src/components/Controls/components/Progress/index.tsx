@@ -1,13 +1,18 @@
 import { useState, useEffect, useRef } from "react";
-import * as Slider from "@radix-ui/react-slider";
-import "./styles.css";
+import {
+  ProgressWrapper,
+  SliderRange,
+  SliderRoot,
+  SliderThumb,
+  SliderTrack,
+} from "./styles";
 
 interface Props {
   audio: HTMLAudioElement;
   isPlaying: boolean;
 }
 
-const ProgressBar: React.FC<Props> = ({ audio, isPlaying }) => {
+const Progress: React.FC<Props> = ({ audio, isPlaying }) => {
   const inputEl = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
   let duration = !Math.round(audio.duration) ? 0 : Math.round(audio.duration);
@@ -30,7 +35,6 @@ const ProgressBar: React.FC<Props> = ({ audio, isPlaying }) => {
   }, [isPlaying]);
 
   const handleRange = (e: any) => {
-    console.log("CHANGE");
     setTimeout(() => {
       setCurrentTime(e);
       audio.currentTime = e;
@@ -38,9 +42,9 @@ const ProgressBar: React.FC<Props> = ({ audio, isPlaying }) => {
   };
 
   return (
-    <div className="progress-wrapper">
-      <span className="current-time">{convertToTime(currentTime)}</span>
-      <Slider.Root
+    <ProgressWrapper>
+      <span>{convertToTime(currentTime)}</span>
+      <SliderRoot
         className="SliderRoot"
         defaultValue={[currentTime]}
         min={0}
@@ -49,14 +53,14 @@ const ProgressBar: React.FC<Props> = ({ audio, isPlaying }) => {
         onValueCommit={handleRange}
         aria-label="Volume"
       >
-        <Slider.Track className="SliderTrack">
-          <Slider.Range className="SliderRange" />
-        </Slider.Track>
-        <Slider.Thumb className="SliderThumb" />
-      </Slider.Root>
-      <span className="duration">{convertToTime(duration)}</span>
-    </div>
+        <SliderTrack className="SliderTrack">
+          <SliderRange className="SliderRange" />
+        </SliderTrack>
+        <SliderThumb className="SliderThumb" />
+      </SliderRoot>
+      <span>{convertToTime(duration)}</span>
+    </ProgressWrapper>
   );
 };
 
-export default ProgressBar;
+export default Progress;
