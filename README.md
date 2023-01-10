@@ -2,7 +2,7 @@
 
 
 # About
-An app to listen to music and mainly apply my studies in Typescript, Redux with Redusauce and Duck Pattern.
+An app to listen to music and mainly apply my studies in Typescript and Redux Toolkit
 
 # Getting Started with Vite!
 Next Generation Frontend Tooling. Get ready for a development environment that can finally catch up with you.
