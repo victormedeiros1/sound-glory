@@ -19,8 +19,8 @@ const Header: React.FC = () => {
         <Title>FOR LISTEN DURING THE BETA</Title>
         <Details>
           <DetailsItem>{songs.length} songs</DetailsItem>
-          <Circle size={6} weight="fill" color="#a36238" />
-          <DetailsItem>10min 15s</DetailsItem>
+          {/* <Circle size={6} weight="fill" color="#a36238" /> */}
+          {/* <DetailsItem>10min 15s</DetailsItem> */}
         </Details>
       </Infos>
     </HeaderStyles>
