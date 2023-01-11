@@ -6,10 +6,8 @@ import {
   SkipForward,
   Repeat,
 } from "phosphor-react";
-import { Buttons, ControlsStyles } from "./styles";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { RootState } from "../../store";
 import {
   pauseSong,
   playSong,
@@ -18,13 +16,12 @@ import {
 } from "../../store/ducks/song";
 import Progress from "./components/Progress";
 import Volume from "./components/Volume";
+import { Buttons, ControlsStyles } from "./styles";
 
 const Controls: React.FC = () => {
   const dispatch = useDispatch();
 
-  const { id, isPlaying, audio } = useAppSelector(
-    (state: RootState) => state.song
-  );
+  const { id, isPlaying, audio } = useAppSelector((state) => state.song);
   const songs = useAppSelector((state) => state.songs);
 
   const handleNextSong = () => {

@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { CaretRight, Circle } from "phosphor-react";
+import { useAppSelector } from "../../hooks/useAppSelector";
 import Divider from "../Divider";
 import Logo from "../Logo";
 import { Nav, NavArrow, NavContent, NavItem, ToggleNav } from "./styles";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useState } from "react";
 
 interface Props {
   open: boolean;

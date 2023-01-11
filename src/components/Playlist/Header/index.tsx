@@ -1,4 +1,4 @@
-import { Circle } from "phosphor-react";
+import { useAppSelector } from "../../../hooks/useAppSelector";
 import {
   Details,
   DetailsItem,
@@ -7,7 +7,6 @@ import {
   Thumbnail,
   Title,
 } from "./styles";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 
 const Header: React.FC = () => {
   const songs = useAppSelector((state) => state.songs);

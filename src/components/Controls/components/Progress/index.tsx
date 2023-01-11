@@ -1,4 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { secondsToMinutes } from "../../../../utils";
+import { useAppSelector } from "../../../../hooks/useAppSelector";
+import { playSong, setSong, setTime } from "../../../../store/ducks/song";
 import {
   CurrentTime,
   Duration,
@@ -8,16 +12,6 @@ import {
   SliderThumb,
   SliderTrack,
 } from "./styles";
-import { secondsToMinutes } from "../../../../utils/utils";
-import { useDispatch } from "react-redux";
-import {
-  pauseSong,
-  playSong,
-  restartSong,
-  setSong,
-  setTime,
-} from "../../../../store/ducks/song";
-import { useAppSelector } from "../../../../hooks/useAppSelector";
 
 interface Props {
   id: number;
@@ -32,18 +26,13 @@ const Progress: React.FC<Props> = ({ id, audio }) => {
   const songs = useAppSelector((state) => state.songs);
 
   useEffect(() => {
-    if (!audio.duration) {
-      audio.onloadeddata = () => setDuration(audio.duration);
-    } else {
-      setDuration(audio.duration);
-    }
+    !audio.duration
+      ? (audio.onloadeddata = () => setDuration(audio.duration))
+      : setDuration(audio.duration);
   }, [audio]);
 
   audio.ontimeupdate = () => setCurrentTime(Math.round(audio.currentTime));
   audio.onended = () => {
-    dispatch(pauseSong());
-    dispatch(restartSong());
-
     id === songs.length - 1
       ? dispatch(setSong(songs[0]))
       : dispatch(setSong(songs[id + 1]));

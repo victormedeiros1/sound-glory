@@ -1,5 +1,5 @@
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { CaretRight, DotsThreeVertical } from "phosphor-react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Playlist } from "../../store/types/playlist";
 import {
   DropdownMenuArrow,

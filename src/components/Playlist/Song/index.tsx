@@ -1,4 +1,15 @@
 import React from "react";
+import { Song as ISong } from "../../../store/types/song";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "../../../hooks/useAppSelector";
+import {
+  pauseSong,
+  playSong,
+  restartSong,
+  setSong,
+} from "../../../store/ducks/song";
+import Dropdown from "../../Dropdown";
+import Bars from "../../Bars";
 import {
   Count,
   Description,
@@ -7,26 +18,14 @@ import {
   Thumbnail,
   Title,
 } from "./styles";
-import { RootState } from "../../../store";
-import Dropdown from "../../Dropdown";
-import { Song as ISong } from "../../../store/types/song";
-import {
-  pauseSong,
-  playSong,
-  restartSong,
-  setSong,
-} from "../../../store/ducks/song";
-import { useDispatch } from "react-redux";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import Bars from "../../Bars";
 interface Props {
   song: ISong;
 }
 
 const Song: React.FC<Props> = ({ song }) => {
   const dispatch = useDispatch();
-  const playlists = useAppSelector((state: RootState) => state.playlists);
-  const { id, isPlaying } = useAppSelector((state: RootState) => state.song);
+  const playlists = useAppSelector((state) => state.playlists);
+  const { id, isPlaying } = useAppSelector((state) => state.song);
 
   const handleClick = () => {
     if (isPlaying) {
