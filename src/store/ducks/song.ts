@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Song } from "../types/song";
 import song1 from "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3";
+import { songs } from "./songs";
+
 const initialState: Song = {
   id: 0,
   title: "Não Temos Tempo",
@@ -22,24 +24,15 @@ const songSlice = createSlice({
     pauseSong: (state) => {
       state.audio.pause(), (state.isPlaying = false);
     },
+    setTime: (state, { payload }) => {
+      state.audio.currentTime = payload;
+    },
     restartSong: (state) => {
       (state.audio.currentTime = 0), (state.isPlaying = true);
-    },
-    nextSong: (state, { payload }) => {
-      return { ...state, ...payload };
-    },
-    previousSong: (state, { payload }) => {
-      return { ...state, ...payload };
     },
   },
 });
 
 export default songSlice.reducer;
-export const {
-  setSong,
-  playSong,
-  pauseSong,
-  restartSong,
-  nextSong,
-  previousSong,
-} = songSlice.actions;
+export const { setSong, playSong, pauseSong, setTime, restartSong } =
+  songSlice.actions;

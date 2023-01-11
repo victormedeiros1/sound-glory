@@ -18,6 +18,7 @@ const Volume: React.FC<Props> = ({ audio }) => {
       <SliderRoot
         min={0}
         max={100}
+        defaultValue={[100]}
         step={1}
         onValueCommit={(e: any) => (audio.volume = e / 100)}
         aria-label="Volume"

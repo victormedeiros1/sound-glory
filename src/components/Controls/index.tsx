@@ -11,10 +11,10 @@ import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { RootState } from "../../store";
 import {
-  nextSong,
   pauseSong,
   playSong,
   restartSong,
+  setSong,
 } from "../../store/ducks/song";
 import Progress from "./components/Progress";
 import Volume from "./components/Volume";
@@ -30,20 +30,23 @@ const Controls: React.FC = () => {
   const handleNextSong = () => {
     dispatch(pauseSong());
     dispatch(restartSong());
-    dispatch(nextSong(songs[id + 1]));
+    id === songs.length - 1
+      ? dispatch(setSong(songs[0]))
+      : dispatch(setSong(songs[id + 1]));
+
     dispatch(playSong());
   };
 
   const handlePreviousSong = () => {
     dispatch(pauseSong());
     dispatch(restartSong());
-    dispatch(nextSong(songs[id - 1]));
+    dispatch(setSong(songs[id - 1]));
     dispatch(playSong());
   };
 
   return (
     <ControlsStyles>
-      <Progress audio={audio} isPlaying={isPlaying} />
+      <Progress id={id} audio={audio} isPlaying={isPlaying} />
 
       <Buttons>
         <Shuffle size={24} color="#111111" />

@@ -4,7 +4,7 @@ import song1 from "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3";
 import song2 from "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3";
 import song3 from "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3";
 
-const initialState: Song[] = [
+export const songs: Song[] = [
   {
     id: 0,
     title: "Não Temos Tempo",
@@ -30,7 +30,7 @@ const initialState: Song[] = [
 
 const songsSlice = createSlice({
   name: "songs",
-  initialState,
+  initialState: songs,
   reducers: {
     listSongs: (state) => state,
   },

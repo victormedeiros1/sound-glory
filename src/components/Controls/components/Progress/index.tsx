@@ -1,53 +1,71 @@
 import { useState, useEffect, useRef } from "react";
 import {
+  CurrentTime,
+  Duration,
   ProgressWrapper,
   SliderRange,
   SliderRoot,
   SliderThumb,
   SliderTrack,
 } from "./styles";
+import { secondsToMinutes } from "../../../../utils/utils";
+import { useDispatch } from "react-redux";
+import {
+  pauseSong,
+  playSong,
+  restartSong,
+  setSong,
+  setTime,
+} from "../../../../store/ducks/song";
+import { useAppSelector } from "../../../../hooks/useAppSelector";
 
 interface Props {
+  id: number;
   audio: HTMLAudioElement;
   isPlaying: boolean;
 }
 
-const Progress: React.FC<Props> = ({ audio, isPlaying }) => {
-  const inputEl = useRef(null);
+const Progress: React.FC<Props> = ({ id, audio }) => {
+  const dispatch = useDispatch();
+  const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  let duration = !Math.round(audio.duration) ? 0 : Math.round(audio.duration);
-
-  const convertToTime = (seconds: number) => {
-    const min = Math.floor(seconds / 60);
-    const sec = Math.floor(seconds % 60);
-    return `${min}:${sec < 10 ? "0" + sec : sec}`;
-  };
+  const songs = useAppSelector((state) => state.songs);
 
   useEffect(() => {
-    if (isPlaying) {
-      const interval = setInterval(() => {
-        setCurrentTime(Math.round(audio.currentTime));
-        convertToTime(duration);
-      }, 1000);
-
-      return () => clearInterval(interval);
+    if (!audio.duration) {
+      audio.onloadeddata = () => setDuration(audio.duration);
+    } else {
+      setDuration(audio.duration);
     }
-  }, [isPlaying]);
+  }, [audio]);
+
+  audio.ontimeupdate = () => setCurrentTime(Math.round(audio.currentTime));
+  audio.onended = () => {
+    dispatch(pauseSong());
+    dispatch(restartSong());
+
+    id === songs.length - 1
+      ? dispatch(setSong(songs[0]))
+      : dispatch(setSong(songs[id + 1]));
+
+    dispatch(playSong());
+    setDuration(audio.duration);
+  };
 
   const handleRange = (e: any) => {
     setCurrentTime(e);
-    audio.currentTime = e;
+    dispatch(setTime(e));
   };
 
   return (
     <ProgressWrapper>
-      <span>{convertToTime(currentTime)}</span>
+      <CurrentTime>{secondsToMinutes(currentTime)}</CurrentTime>
       <SliderRoot
-        defaultValue={[currentTime]}
         min={0}
+        value={[currentTime]}
         max={duration}
         step={1}
-        onValueCommit={handleRange}
+        onValueChange={handleRange}
         aria-label="Song time"
       >
         <SliderTrack>
@@ -55,7 +73,7 @@ const Progress: React.FC<Props> = ({ audio, isPlaying }) => {
         </SliderTrack>
         <SliderThumb />
       </SliderRoot>
-      <span>{convertToTime(duration)}</span>
+      <Duration>{secondsToMinutes(duration)}</Duration>
     </ProgressWrapper>
   );
 };

@@ -5,7 +5,18 @@ export const ProgressWrapper = styled.div`
   width: 100%;
   max-width: 600px;
   display: flex;
-  gap: var(--g-16);
+  gap: var(--g-8);
+`;
+export const CurrentTime = styled.span`
+  width: 100%;
+  max-width: 2rem;
+  text-align: center;
+`;
+
+export const Duration = styled.span`
+  width: 100%;
+  max-width: 2rem;
+  text-align: center;
 `;
 
 /**

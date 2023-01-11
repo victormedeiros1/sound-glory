@@ -15,8 +15,6 @@ export const store = configureStore({
     }),
 });
 
-console.log("STORE", store.getState());
-
 store.subscribe(() => {
   console.log("SUBSCRIBE", store.getState());
 });
