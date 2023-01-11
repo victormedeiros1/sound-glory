@@ -28,8 +28,6 @@ const Song: React.FC<Props> = ({ song }) => {
   const playlists = useAppSelector((state: RootState) => state.playlists);
   const { id, isPlaying } = useAppSelector((state: RootState) => state.song);
 
-  const widthScreen = window.screen.width;
-
   const handleClick = () => {
     if (isPlaying) {
       if (id === song.id) {
@@ -53,12 +51,12 @@ const Song: React.FC<Props> = ({ song }) => {
       {<Bars isActive={isPlaying && id === song.id} />}
       <Infos>
         <Title>
-          {widthScreen < 576 && song.title.length > 24
+          {window.screen.width < 576 && song.title.length > 24
             ? song.title.slice(0, 24) + "..."
             : song.title}
         </Title>
         <Description>
-          {widthScreen < 576 && song.description.length > 24
+          {window.screen.width < 576 && song.description.length > 24
             ? song.description.slice(0, 24) + "..."
             : song.description}
         </Description>
