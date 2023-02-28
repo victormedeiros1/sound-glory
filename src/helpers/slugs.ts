@@ -11,6 +11,7 @@ export const songs: Song[] = [
     title: "Não Temos Tempo",
     description: "Nossa Toca",
     audio: new Audio(song1),
+    duration: 363,
     isPlaying: false,
   },
   {
@@ -18,6 +19,7 @@ export const songs: Song[] = [
     title: "Super Herói",
     description: "Hungria Hip Hop",
     audio: new Audio(song2),
+    duration: 202,
     isPlaying: false,
   },
   {
@@ -25,13 +27,15 @@ export const songs: Song[] = [
     title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
     description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
     audio: new Audio(song3),
+    duration: 216,
     isPlaying: false,
   },
   {
     id: 3,
     title: "Libertina",
-    description: "Louz",
+    description: "Lowz",
     audio: new Audio(song4),
+    duration: 190,
     isPlaying: false,
   },
   {
@@ -39,6 +43,7 @@ export const songs: Song[] = [
     title: "A vida é cheia dessas coisas",
     description: "Dani Black",
     audio: new Audio(song5),
+    duration: 227,
     isPlaying: false,
   },
 ];
