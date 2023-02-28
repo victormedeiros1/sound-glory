@@ -12,20 +12,19 @@ import { secondsToMinutes } from "../../../utils";
 import { Circle } from "phosphor-react";
 
 const Header: React.FC = () => {
-  const [totalTime, setTotalTime] = useState<number>(0);
   const songs = useAppSelector((state) => state.songs);
-  const audios = songs.map(({ audio }) => audio);
+  const [totalDuration, setTotalDuration] = useState<number>(0);
 
-  const sumTotalSongTime = () => {
-    audios.forEach((audio) => {
-      audio.onloadeddata = () =>
-        setTotalTime(totalTime + Math.round(audio.duration));
-    });
+  const sumAllDurations = () => {
+    const allDurations = songs.map(({ duration }) => duration);
+    const allDurationsSummed = allDurations.reduce((total, i) => total + i);
+
+    setTotalDuration(allDurationsSummed);
   };
 
   useEffect(() => {
-    sumTotalSongTime();
-  });
+    sumAllDurations();
+  }, []);
 
   return (
     <HeaderStyles>
@@ -35,7 +34,9 @@ const Header: React.FC = () => {
         <Details>
           <DetailsItem>{songs.length} songs</DetailsItem>
           <Circle size={6} weight="fill" color="#a36238" />
-          <DetailsItem>{secondsToMinutes(totalTime)} de duração</DetailsItem>
+          <DetailsItem>
+            {secondsToMinutes(totalDuration)} de duração
+          </DetailsItem>
         </Details>
       </Infos>
     </HeaderStyles>
