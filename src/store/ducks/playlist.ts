@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
-import { Playlist } from "../types/playlist";
+import { Playlist } from "../../types/playlist";
 
 const initialState: Playlist[] = [];
 

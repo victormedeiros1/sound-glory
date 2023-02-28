@@ -1,5 +1,5 @@
 import React from "react";
-import { Song as ISong } from "../../../store/types/song";
+import { Song as ISong } from "../../../types/song";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import {
