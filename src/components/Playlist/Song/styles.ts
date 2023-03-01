@@ -21,18 +21,6 @@ export const SongStyles = styled.div`
   }
 `;
 
-export const Actions = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  border-radius: 0.25rem;
-  border: 1px solid transparent;
-
-  &:hover {
-    border: 1px solid var(--dark-3);
-  }
-`;
-
 export const Infos = styled.div`
   width: 100%;
   display: flex;
@@ -59,4 +47,21 @@ export const Count = styled.span`
 export const Thumbnail = styled.img`
   width: 2rem;
   border: 1px solid var(--gray);
+`;
+
+export const Actions = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+
+  &:hover {
+    border: 1px solid var(--dark-3);
+  }
+`;
+
+export const Duration = styled.span`
+  font-size: var(--fs-16);
+  color: var(--lightGray);
 `;

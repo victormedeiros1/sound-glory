@@ -13,11 +13,13 @@ import Bars from "../../Bars";
 import {
   Count,
   Description,
+  Duration,
   Infos,
   SongStyles,
   Thumbnail,
   Title,
 } from "./styles";
+import { secondsToMinutes } from "../../../utils";
 interface Props {
   song: ISong;
 }
@@ -60,7 +62,7 @@ const Song: React.FC<Props> = ({ song }) => {
             : song.description}
         </Description>
       </Infos>
-      {/* <Time>{}</Time> */}
+      <Duration>{secondsToMinutes(song.duration)}</Duration>
 
       <Dropdown playlists={playlists} />
     </SongStyles>
