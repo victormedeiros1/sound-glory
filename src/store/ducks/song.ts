@@ -7,6 +7,7 @@ const initialState: Song = {
   title: "Não Temos Tempo",
   description: "Nossa Toca",
   audio: new Audio(song1),
+  duration: 363,
   isPlaying: false,
 };
 
