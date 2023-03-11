@@ -21,8 +21,8 @@ export interface Props {
 const Actions: React.FC<Props> = ({ playlists, song }) => {
   const dispatch = useDispatch();
 
-  const addToPlaylist = () => {
-    dispatch(addSongToPlaylist({ song }));
+  const addToPlaylist = (playlistId: string) => {
+    dispatch(addSongToPlaylist({ playlistId, song }));
   };
 
   return (
@@ -45,7 +45,7 @@ const Actions: React.FC<Props> = ({ playlists, song }) => {
             <DropdownMenu.Portal>
               <DropdownMenuSubContent sideOffset={8} alignOffset={-8}>
                 {playlists.map(({ id, name }) => (
-                  <DropdownMenuItem onClick={addToPlaylist} key={id}>
+                  <DropdownMenuItem onClick={() => addToPlaylist(id)} key={id}>
                     {name}
                   </DropdownMenuItem>
                 ))}
