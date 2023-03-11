@@ -8,16 +8,17 @@ import {
   restartSong,
   setSong,
 } from "../../../store/ducks/song";
-import Dropdown from "../../Dropdown";
+import Actions from "./Actions";
 import Bars from "../../Bars";
 import {
   Count,
   Description,
   Duration,
   Infos,
-  SongStyles,
+  SongWrapper,
   Thumbnail,
   Title,
+  SongData,
 } from "./styles";
 import { secondsToMinutes } from "../../../utils";
 interface Props {
@@ -46,26 +47,28 @@ const Song: React.FC<Props> = ({ song }) => {
   };
 
   return (
-    <SongStyles onClick={handleClick}>
-      <Count>{song.id + 1}</Count>
-      <Thumbnail src="https://picsum.photos/48/48" />
-      <Bars isActive={isPlaying && id === song.id} />
-      <Infos>
-        <Title>
-          {window.screen.width < 576 && song.title.length > 24
-            ? song.title.slice(0, 24) + "..."
-            : song.title}
-        </Title>
-        <Description>
-          {window.screen.width < 576 && song.description.length > 24
-            ? song.description.slice(0, 24) + "..."
-            : song.description}
-        </Description>
-      </Infos>
-      <Duration>{secondsToMinutes(song.duration)}</Duration>
+    <SongWrapper onClick={handleClick}>
+      <SongData>
+        <Count>{song.id + 1}</Count>
+        <Thumbnail src="https://picsum.photos/48/48" />
+        <Bars isActive={isPlaying && id === song.id} />
+        <Infos>
+          <Title>
+            {window.screen.width < 576 && song.title.length > 24
+              ? song.title.slice(0, 24) + "..."
+              : song.title}
+          </Title>
+          <Description>
+            {window.screen.width < 576 && song.description.length > 24
+              ? song.description.slice(0, 24) + "..."
+              : song.description}
+          </Description>
+        </Infos>
+        <Duration>{secondsToMinutes(song.duration)}</Duration>
+      </SongData>
 
-      <Dropdown playlists={playlists} />
-    </SongStyles>
+      <Actions playlists={playlists} song={song} />
+    </SongWrapper>
   );
 };
 

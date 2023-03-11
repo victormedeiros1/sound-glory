@@ -1,6 +1,6 @@
 import { CaretRight, DotsThreeVertical } from "phosphor-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { Playlist } from "../../types/playlist";
+import { Playlist } from "../../../../types/playlist";
 import {
   DropdownMenuArrow,
   DropdownMenuContent,
@@ -9,12 +9,22 @@ import {
   DropdownMenuSubTrigger,
   RightSlot,
 } from "./styles";
+import { useDispatch } from "react-redux";
+import { addSongToPlaylist } from "../../../../store/ducks/playlists";
+import { Song } from "../../../../types/song";
 
 export interface Props {
   playlists: Playlist[];
+  song: Song;
 }
 
-const Dropdown: React.FC<Props> = ({ playlists }) => {
+const Actions: React.FC<Props> = ({ playlists, song }) => {
+  const dispatch = useDispatch();
+
+  const addToPlaylist = () => {
+    dispatch(addSongToPlaylist({ song }));
+  };
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -35,7 +45,9 @@ const Dropdown: React.FC<Props> = ({ playlists }) => {
             <DropdownMenu.Portal>
               <DropdownMenuSubContent sideOffset={8} alignOffset={-8}>
                 {playlists.map(({ id, name }) => (
-                  <DropdownMenuItem key={id}>{name}</DropdownMenuItem>
+                  <DropdownMenuItem onClick={addToPlaylist} key={id}>
+                    {name}
+                  </DropdownMenuItem>
                 ))}
               </DropdownMenuSubContent>
             </DropdownMenu.Portal>
@@ -47,4 +59,4 @@ const Dropdown: React.FC<Props> = ({ playlists }) => {
   );
 };
 
-export default Dropdown;
+export default Actions;

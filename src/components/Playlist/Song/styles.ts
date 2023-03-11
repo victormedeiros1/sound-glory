@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const SongStyles = styled.div`
+export const SongWrapper = styled.div`
+  display: flex;
+`;
+
+export const SongData = styled.div`
   display: flex;
   align-items: center;
   gap: var(--g-16);
