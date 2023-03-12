@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Playlist } from "../../types/playlist";
 import { v4 as uuid } from "uuid";
-import { playSong } from "./song";
+import { songs } from "../../helpers/slugs";
 
 const initialState: Playlist[] = [
   {
     id: uuid(),
-    name: "COPA DO MUNDO",
-    songs: [],
+    name: "EXPERIMENTE",
+    songs,
+    selected: true,
   },
 ];
 
@@ -15,8 +16,16 @@ const playlistsSlice = createSlice({
   initialState,
   name: "playlists",
   reducers: {
+    setPlaylist: (state, action) => {
+      return state.map((playlist) => {
+        return { ...playlist, selected: playlist.id === action.payload };
+      });
+    },
     addPlaylist: (state, action) => {
-      return [...state, { id: uuid(), name: action.payload, songs: [] }];
+      return [
+        ...state,
+        { id: uuid(), name: action.payload, songs: [], selected: false },
+      ];
     },
     addSongToPlaylist: (state, action) => {
       const { playlistId, song } = action.payload;
@@ -31,4 +40,5 @@ const playlistsSlice = createSlice({
 });
 
 export default playlistsSlice.reducer;
-export const { addPlaylist, addSongToPlaylist } = playlistsSlice.actions;
+export const { addPlaylist, addSongToPlaylist, setPlaylist } =
+  playlistsSlice.actions;
