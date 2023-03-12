@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Song } from "../../types/song";
-import { songs } from "../../helpers/slugs";
+import { songs } from "../../helpers/songs";
 
 const initialState: Song = songs[0];
 

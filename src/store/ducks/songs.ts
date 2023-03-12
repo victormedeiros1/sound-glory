@@ -1,12 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { songs } from "../../helpers/slugs";
+import { songs } from "../../helpers/songs";
 
 const songsSlice = createSlice({
   name: "songs",
   initialState: songs,
-  reducers: {
-    listSongs: (state) => state,
-  },
+  reducers: {},
 });
 
 export default songsSlice.reducer;

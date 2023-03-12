@@ -21,12 +21,16 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
     dispatch(setPlaylist(id));
   };
 
+  const changeToAllSongs = () => {
+    dispatch(setPlaylist(0));
+  };
+
   return (
     <>
       <Nav navbarIsOpen={navbarIsOpen}>
         <NavContent>
           <Logo />
-          <NavItem style={{ color: "#fff" }}>
+          <NavItem style={{ color: "#fff" }} onClick={changeToAllSongs}>
             <Circle size={6} weight="fill" color="#fff" />
             HOME
             <Circle size={6} weight="fill" color="#fff" />
