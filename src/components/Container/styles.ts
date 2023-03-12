@@ -12,7 +12,7 @@ export const ContainerStyles = styled.div`
   margin: 0 auto;
 
   @media (max-width: 1200px) {
-    padding: var(--p-16) var(--p-16) 0 var(--p-48);
+    padding: var(--p-16) var(--p-16) 0 var(--p-32);
   }
 
   @media (max-width: 576px) {
