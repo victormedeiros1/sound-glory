@@ -14,22 +14,23 @@ import {
   restartSong,
   setSong,
 } from "../../store/ducks/song";
-import Progress from "./components/Progress";
-import Volume from "./components/Volume";
+import Progress from "./Progress";
+import Volume from "./Volume";
 import { Buttons, ControlsStyles } from "./styles";
 
 const Controls: React.FC = () => {
   const dispatch = useDispatch();
 
-  const { id, isPlaying, audio } = useAppSelector((state) => state.song);
-  const songs = useAppSelector((state) => state.songs);
+  const { songs } = useAppSelector((state) => state);
+  const { song } = useAppSelector((state) => state);
+  const songIndex = songs.indexOf(song);
 
   const handleNextSong = () => {
     dispatch(pauseSong());
     dispatch(restartSong());
-    id === songs.length - 1
+    songIndex === songs.length - 1
       ? dispatch(setSong(songs[0]))
-      : dispatch(setSong(songs[id + 1]));
+      : dispatch(setSong(songs[songIndex + 1]));
 
     dispatch(playSong());
   };
@@ -37,19 +38,19 @@ const Controls: React.FC = () => {
   const handlePreviousSong = () => {
     dispatch(pauseSong());
     dispatch(restartSong());
-    dispatch(setSong(songs[id - 1]));
+    dispatch(setSong(songs[songIndex - 1]));
     dispatch(playSong());
   };
 
   return (
     <ControlsStyles>
-      <Progress id={id} audio={audio} isPlaying={isPlaying} />
+      <Progress songIndex={songIndex} audio={song.audio} />
 
       <Buttons>
         <Shuffle size={24} color="#111111" />
         <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
 
-        {isPlaying ? (
+        {song.isPlaying ? (
           <Pause
             size={24}
             color="#111111"
@@ -65,7 +66,7 @@ const Controls: React.FC = () => {
 
         <SkipForward size={24} color="#111111" onClick={handleNextSong} />
         <Repeat size={24} color="#111111" />
-        <Volume audio={audio} isPlaying={isPlaying} />
+        <Volume audio={song.audio} isPlaying={song.isPlaying} />
       </Buttons>
     </ControlsStyles>
   );
