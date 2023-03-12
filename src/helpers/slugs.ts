@@ -1,4 +1,5 @@
 import { Song } from "../types/song";
+import { v4 as uuid } from "uuid";
 import song1 from "/src/assets/audios/Nossa Toca - Não Temos Tempo.mp3";
 import song2 from "/src/assets/audios/Hungria Hip Hop - Super Herói.mp3";
 import song3 from "/src/assets/audios/Hayya Hayya (Better Together) - FIFA World Cup 2022.mp3";
@@ -7,7 +8,7 @@ import song5 from "/src/assets/audios/Dani Black - A Vida É Cheia Dessas Coisas
 
 export const songs: Song[] = [
   {
-    id: 0,
+    id: uuid(),
     title: "Não Temos Tempo",
     description: "Nossa Toca",
     audio: new Audio(song1),
@@ -15,7 +16,7 @@ export const songs: Song[] = [
     isPlaying: false,
   },
   {
-    id: 1,
+    id: uuid(),
     title: "Super Herói",
     description: "Hungria Hip Hop",
     audio: new Audio(song2),
@@ -23,7 +24,7 @@ export const songs: Song[] = [
     isPlaying: false,
   },
   {
-    id: 2,
+    id: uuid(),
     title: "Hayya Hayya (Better Together) - FIFA World Cup 2022",
     description: "Trindad Cordona, Davido, Aisha, FIFA Sound",
     audio: new Audio(song3),
@@ -31,7 +32,7 @@ export const songs: Song[] = [
     isPlaying: false,
   },
   {
-    id: 3,
+    id: uuid(),
     title: "Libertina",
     description: "Lowz",
     audio: new Audio(song4),
@@ -39,7 +40,7 @@ export const songs: Song[] = [
     isPlaying: false,
   },
   {
-    id: 4,
+    id: uuid(),
     title: "A vida é cheia dessas coisas",
     description: "Dani Black",
     audio: new Audio(song5),

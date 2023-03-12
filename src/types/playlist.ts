@@ -4,4 +4,5 @@ export interface Playlist {
   id: string;
   name: string;
   songs: Song[];
+  selected: boolean;
 }

@@ -23,9 +23,10 @@ import {
 import { secondsToMinutes } from "../../../utils";
 interface Props {
   song: ISong;
+  index: Number;
 }
 
-const Song: React.FC<Props> = ({ song }) => {
+const Song: React.FC<Props> = ({ song, index }) => {
   const dispatch = useDispatch();
   const playlists = useAppSelector((state) => state.playlists);
   const { id, isPlaying } = useAppSelector((state) => state.song);
@@ -49,7 +50,7 @@ const Song: React.FC<Props> = ({ song }) => {
   return (
     <SongWrapper onClick={handleClick}>
       <SongData>
-        <Count>{song.id + 1}</Count>
+        <Count>{Number(index) + 1}</Count>
         <Thumbnail src="https://picsum.photos/48/48" />
         <Bars isActive={isPlaying && id === song.id} />
         <Infos>
