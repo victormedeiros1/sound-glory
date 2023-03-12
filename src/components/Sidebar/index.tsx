@@ -4,6 +4,8 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import Divider from "../Divider";
 import Logo from "../Logo";
 import { Nav, NavArrow, NavContent, NavItem, ToggleNav } from "./styles";
+import { useDispatch } from "react-redux";
+import { setPlaylist } from "../../store/ducks/playlists";
 
 interface Props {
   open: boolean;
@@ -11,8 +13,13 @@ interface Props {
 }
 
 const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
+  const dispatch = useDispatch();
   const { playlists } = useAppSelector((state) => state);
   const [navbarIsOpen, setNavbarIsOpen] = useState(false);
+
+  const changePlaylist = (id: string) => {
+    dispatch(setPlaylist(id));
+  };
 
   return (
     <>
@@ -27,7 +34,9 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
           <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
           <Divider />
           {playlists.map(({ id, name }) => (
-            <NavItem key={id}>{name}</NavItem>
+            <NavItem onClick={() => changePlaylist(id)} key={id}>
+              {name}
+            </NavItem>
           ))}
         </NavContent>
 
