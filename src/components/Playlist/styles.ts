@@ -4,11 +4,7 @@ export const PlaylistStyles = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: var(--g-16);
-
-  @media (max-width: 576px) {
-    gap: var(--g-8);
-  }
+  gap: var(--g-8);
 `;
 
 export const Songs = styled.ul`

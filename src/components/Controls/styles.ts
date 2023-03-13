@@ -4,9 +4,8 @@ export const ControlsStyles = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--g-8);
   background-image: var(--primaryGradient);
-  padding: var(--p-16) var(--p-24) var(--p-24) var(--p-24);
+  padding: var(--p-8) var(--p-16);
 
   @media (max-width: 576px) {
     padding: var(--p-16);

@@ -11,7 +11,7 @@ import {
 import Actions from "./Actions";
 import Bars from "../../Bars";
 import {
-  Count,
+  Index,
   Description,
   Duration,
   Infos,
@@ -50,7 +50,7 @@ const Song: React.FC<Props> = ({ song, index }) => {
   return (
     <SongWrapper onClick={handleClick}>
       <SongData>
-        <Count>{Number(index) + 1}</Count>
+        <Index>{Number(index) + 1}</Index>
         <Thumbnail src="https://picsum.photos/48/48" />
         <Bars isActive={isPlaying && id === song.id} />
         <Infos>

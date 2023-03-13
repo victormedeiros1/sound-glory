@@ -2,45 +2,35 @@ import styled from "styled-components";
 
 export const HeaderStyles = styled.header`
   display: flex;
-  gap: var(--g-32);
   box-shadow: var(--shadow);
 `;
 
 export const Thumbnail = styled.img`
-  width: 100%;
-  max-width: 200px;
-  border-radius: 8px;
-
-  @media (max-width: 1200px) {
-    max-width: 180px;
-  }
-
-  @media (max-width: 992px) {
-    max-width: 160px;
-  }
+  max-width: 8rem;
 
   @media (max-width: 576px) {
-    max-width: 100px;
+    max-width: 6rem;
   }
 `;
 
 export const Title = styled.h1`
   text-shadow: var(--shadow);
   color: var(--primaryMain);
-  font-size: var(--fs-64);
-  line-height: var(--lh-64);
+  font-size: var(--fs-48);
   font-weight: 900;
-  margin-top: var(--m-16);
-  margin-bottom: var(--m-8);
-
-  @media (max-width: 576px) {
-    font-weight: 700;
-  }
+  margin-top: -0.9rem;
 `;
 
 export const Infos = styled.div`
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
+  padding: var(--p-16);
+
+  @media (max-width: 576px) {
+    padding: var(--p-8);
+  }
 `;
 
 export const Details = styled.ul`
@@ -52,5 +42,5 @@ export const Details = styled.ul`
 
 export const DetailsItem = styled.li`
   color: var(--primaryMain);
-  font-size: var(--fs-16);
+  font-size: var(--fs-14);
 `;

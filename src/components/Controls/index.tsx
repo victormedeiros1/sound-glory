@@ -44,8 +44,6 @@ const Controls: React.FC = () => {
 
   return (
     <ControlsStyles>
-      <Progress songIndex={songIndex} audio={song.audio} />
-
       <Buttons>
         <Shuffle size={24} color="#111111" />
         <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
@@ -68,6 +66,7 @@ const Controls: React.FC = () => {
         <Repeat size={24} color="#111111" />
         <Volume audio={song.audio} isPlaying={song.isPlaying} />
       </Buttons>
+      <Progress songIndex={songIndex} audio={song.audio} />
     </ControlsStyles>
   );
 };

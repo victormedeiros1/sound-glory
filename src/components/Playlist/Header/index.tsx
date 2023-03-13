@@ -28,15 +28,13 @@ const Header: React.FC = () => {
 
   return (
     <HeaderStyles>
-      <Thumbnail src="https://picsum.photos/200/200" />
+      <Thumbnail src="https://picsum.photos/128/128" />
       <Infos>
-        <Title>FOR LISTEN DURING THE BETA</Title>
+        <Title>HOME</Title>
         <Details>
           <DetailsItem>{songs.length} songs</DetailsItem>
-          <Circle size={6} weight="fill" color="#a36238" />
-          <DetailsItem>
-            {secondsToMinutes(totalDuration)} de duração
-          </DetailsItem>
+          <Circle size={4} weight="fill" color="#a36238" />
+          <DetailsItem>{secondsToMinutes(totalDuration)}</DetailsItem>
         </Details>
       </Infos>
     </HeaderStyles>

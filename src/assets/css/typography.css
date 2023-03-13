@@ -17,27 +17,29 @@ h6 {
 }
 
 :root {
+  --fs-11: 0.6875rem;
   --fs-12: 0.75rem;
   --fs-14: 0.875rem;
   --fs-16: 1rem;
+  --fs-32: 2rem;
+  --fs-48: 3rem;
   --fs-64: 4rem;
 }
 
 @media (max-width: 1200px) {
   :root {
-    --fs-64: 4rem;
+    --fs-48: 3rem;
   }
 }
 
 @media (max-width: 992px) {
   :root {
-    --fs-64: 3rem;
+    --fs-48: 2rem;
   }
 }
 
 @media (max-width: 576px) {
   :root {
     --fs-16: 0.875rem;
-    --fs-64: 1.25rem;
   }
 }

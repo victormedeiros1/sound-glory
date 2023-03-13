@@ -13,15 +13,11 @@ export const SongData = styled.div`
   border-radius: 0.5rem;
   border: 1px solid var(--dark-1);
   cursor: pointer;
-  padding: var(--p-16);
+  padding: var(--p-8);
+  padding-left: var(--p-12);
 
   &:hover {
     border: 1px solid var(--dark-3);
-  }
-
-  @media (max-width: 576px) {
-    padding: var(--p-8);
-    gap: var(--g-8);
   }
 `;
 
@@ -32,17 +28,17 @@ export const Infos = styled.div`
 `;
 
 export const Title = styled.span`
-  font-size: var(--fs-16);
+  font-size: var(--fs-14);
   color: var(--lightGray);
 `;
 
 export const Description = styled.span`
-  font-size: var(--fs-12);
+  font-size: 11px;
   color: var(--lightGray);
 `;
 
-export const Count = styled.span`
-  font-size: var(--fs-16);
+export const Index = styled.span`
+  font-size: var(--fs-14);
   text-align: center;
   width: 1.4rem;
   color: var(--lightGray);
@@ -66,6 +62,6 @@ export const Actions = styled.div`
 `;
 
 export const Duration = styled.span`
-  font-size: var(--fs-16);
+  font-size: var(--fs-14);
   color: var(--lightGray);
 `;
