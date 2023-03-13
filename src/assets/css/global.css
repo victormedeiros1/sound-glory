@@ -13,3 +13,7 @@ button {
 body {
   overflow: hidden;
 }
+
+:root {
+  --resize-for-mobile: 0;
+}

@@ -8,6 +8,10 @@ import "./assets/css/index.css";
 const App = () => {
   const [open, setOpen] = useState(false);
 
+  // FIX IN VIEWPORT TO MOBILE SCREENS
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--resize-for-mobile", `${vh}px`);
+
   return (
     <Container>
       <Sidebar open={open} setOpen={setOpen} />

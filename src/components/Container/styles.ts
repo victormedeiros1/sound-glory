@@ -7,6 +7,7 @@ export const ContainerStyles = styled.div`
   background-color: var(--dark-1);
   width: 100%;
   height: 100vh;
+  height: calc(var(--resize-for-mobile, 1vh) * 100);
   position: relative;
   padding: var(--p-16) var(--p-16) 0 var(--p-16);
   margin: 0 auto;
