@@ -31,7 +31,7 @@ const Song: React.FC<Props> = ({ song, index }) => {
   const playlists = useAppSelector((state) => state.playlists);
   const { id, isPlaying } = useAppSelector((state) => state.song);
 
-  const handleClick = () => {
+  const handlePlayOrPause = () => {
     if (isPlaying) {
       if (id === song.id) {
         dispatch(pauseSong());
@@ -48,8 +48,8 @@ const Song: React.FC<Props> = ({ song, index }) => {
   };
 
   return (
-    <SongWrapper onClick={handleClick}>
-      <SongData>
+    <SongWrapper>
+      <SongData onClick={handlePlayOrPause}>
         <Index>{Number(index) + 1}</Index>
         <Thumbnail src="https://picsum.photos/48/48" />
         <Bars isActive={isPlaying && id === song.id} />
