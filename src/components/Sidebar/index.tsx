@@ -46,7 +46,7 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
 
         <ToggleNav navbarIsOpen={navbarIsOpen}>
           <NavArrow onClick={() => setNavbarIsOpen(!navbarIsOpen)}>
-            <CaretRight size={16} color="#fff" />
+            <CaretRight size={16} color="#111" />
           </NavArrow>
         </ToggleNav>
       </Nav>

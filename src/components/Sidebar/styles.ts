@@ -52,9 +52,9 @@ export const NavItem = styled.button`
 export const ToggleNav = styled.div<Props>`
   display: none;
   position: absolute;
-  top: 0;
-  right: 0rem;
-  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -0.5rem;
   transform: ${(props) =>
     props.navbarIsOpen ? "rotate(180deg)" : "rotate(0deg)"};
   transition: 0.5s;
@@ -65,14 +65,16 @@ export const ToggleNav = styled.div<Props>`
   }
 `;
 
-export const NavArrow = styled.li`
+export const NavArrow = styled.span`
   display: flex;
   align-items: center;
   height: 100%;
   cursor: pointer;
   user-select: none;
+  border-radius: 1000px;
+  background-color: var(--gray);
 
-  svg {
-    user-select: none;
+  &:hover {
+    background-color: var(--lightGray);
   }
 `;
