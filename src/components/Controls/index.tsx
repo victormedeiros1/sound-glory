@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Shuffle,
   SkipBack,
@@ -21,6 +22,9 @@ import { songs } from "../../helpers/songs";
 
 const Controls: React.FC = () => {
   const dispatch = useDispatch();
+  const [random, setRandom] = useState<boolean>(false);
+  const [repeat, setRepeat] = useState<boolean>(false);
+
   const { song } = useAppSelector((state) => state);
   const songsIndexes = songs.map(({ id }) => id);
   const songIndex = songsIndexes.indexOf(song.id);
@@ -28,9 +32,14 @@ const Controls: React.FC = () => {
   const handleNextSong = () => {
     dispatch(pauseSong());
     dispatch(restartSong());
-    songIndex === songs.length - 1
-      ? dispatch(setSong(songs[0]))
-      : dispatch(setSong(songs[songIndex + 1]));
+    if (songIndex === songs.length - 1) {
+      dispatch(setSong(songs[0]));
+    } else if (random) {
+      const randomNumber = Math.floor(Math.random() * songs.length);
+      dispatch(setSong(songs[randomNumber]));
+    } else {
+      dispatch(setSong(songs[songIndex + 1]));
+    }
 
     dispatch(playSong());
   };
@@ -45,7 +54,11 @@ const Controls: React.FC = () => {
   return (
     <ControlsStyles>
       <Buttons>
-        <Shuffle size={24} color="#111111" />
+        <Shuffle
+          size={24}
+          color={random ? "#ffffff" : "#111111"}
+          onClick={() => setRandom(!random)}
+        />
         <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
 
         {song.isPlaying ? (
@@ -63,10 +76,19 @@ const Controls: React.FC = () => {
         )}
 
         <SkipForward size={24} color="#111111" onClick={handleNextSong} />
-        <Repeat size={24} color="#111111" />
+        <Repeat
+          size={24}
+          color={repeat ? "#ffffff" : "#111111"}
+          onClick={() => setRepeat(!repeat)}
+        />
         <Volume audio={song.audio} isPlaying={song.isPlaying} />
       </Buttons>
-      <Progress songIndex={songIndex} audio={song.audio} />
+      <Progress
+        audio={song.audio}
+        songIndex={songIndex}
+        repeatIsOn={repeat}
+        randomIsOn={random}
+      />
     </ControlsStyles>
   );
 };

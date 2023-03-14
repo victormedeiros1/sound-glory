@@ -14,11 +14,18 @@ import {
 } from "./styles";
 
 interface Props {
-  songIndex: number;
   audio: HTMLAudioElement;
+  songIndex: number;
+  repeatIsOn: boolean;
+  randomIsOn: boolean;
 }
 
-const Progress: React.FC<Props> = ({ songIndex, audio }) => {
+const Progress: React.FC<Props> = ({
+  audio,
+  songIndex,
+  repeatIsOn,
+  randomIsOn,
+}) => {
   const dispatch = useDispatch();
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -31,12 +38,23 @@ const Progress: React.FC<Props> = ({ songIndex, audio }) => {
   }, [audio]);
 
   audio.ontimeupdate = () => setCurrentTime(Math.round(audio.currentTime));
+
   audio.onended = () => {
-    console.log(songIndex);
-    console.log(songs.length);
-    songIndex === songs.length - 1
-      ? dispatch(setSong(songs[0]))
-      : dispatch(setSong(songs[songIndex + 1]));
+    if (repeatIsOn) {
+      dispatch(playSong());
+
+      return;
+    } else if (randomIsOn) {
+      const randomNumber = Math.floor(Math.random() * songs.length);
+      dispatch(setSong(songs[randomNumber]));
+      dispatch(playSong());
+
+      return;
+    } else if (songIndex === songs.length - 1) {
+      dispatch(setSong(songs[0]));
+    } else {
+      dispatch(setSong(songs[songIndex + 1]));
+    }
 
     dispatch(playSong());
     setDuration(audio.duration);
