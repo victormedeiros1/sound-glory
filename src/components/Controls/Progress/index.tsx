@@ -32,6 +32,8 @@ const Progress: React.FC<Props> = ({ songIndex, audio }) => {
 
   audio.ontimeupdate = () => setCurrentTime(Math.round(audio.currentTime));
   audio.onended = () => {
+    console.log(songIndex);
+    console.log(songs.length);
     songIndex === songs.length - 1
       ? dispatch(setSong(songs[0]))
       : dispatch(setSong(songs[songIndex + 1]));

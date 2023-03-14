@@ -17,13 +17,13 @@ import {
 import Progress from "./Progress";
 import Volume from "./Volume";
 import { Buttons, ControlsStyles } from "./styles";
+import { songs } from "../../helpers/songs";
 
 const Controls: React.FC = () => {
   const dispatch = useDispatch();
-
-  const { songs } = useAppSelector((state) => state);
   const { song } = useAppSelector((state) => state);
-  const songIndex = songs.indexOf(song);
+  const songsIndexes = songs.map(({ id }) => id);
+  const songIndex = songsIndexes.indexOf(song.id);
 
   const handleNextSong = () => {
     dispatch(pauseSong());
