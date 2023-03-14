@@ -7,6 +7,7 @@ interface Props {
 export const Nav = styled.nav<Props>`
   position: relative;
   max-width: 12.5rem;
+  z-index: 9999;
   min-height: 100vh;
 
   display: flex;
