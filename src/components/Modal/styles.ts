@@ -7,6 +7,7 @@ interface Props {
 
 export const Pelicle = styled.div<Props>`
   display: ${(props) => (props.open ? "initial" : "none")};
+  z-index: 10000;
 
   position: absolute;
   top: 0;
@@ -15,7 +16,7 @@ export const Pelicle = styled.div<Props>`
   width: 100%;
   height: 100%;
 
-  background-color: rgba(17, 17, 17, 0.8);
+  background-color: var(--transparent);
 `;
 
 export const ModalStyles = styled.div`

@@ -56,29 +56,33 @@ const Controls: React.FC = () => {
       <Buttons>
         <Shuffle
           size={24}
-          color={random ? "#ffffff" : "#111111"}
+          color={random ? "var(--light)" : "var(--dark-1)"}
           onClick={() => setRandom(!random)}
         />
-        <SkipBack size={24} color="#111111" onClick={handlePreviousSong} />
+        <SkipBack
+          size={24}
+          color="var(--dark-1)"
+          onClick={handlePreviousSong}
+        />
 
         {song.isPlaying ? (
           <Pause
             size={24}
-            color="#111111"
+            color="var(--dark-1)"
             onClick={() => dispatch(pauseSong())}
           />
         ) : (
           <Play
             size={24}
-            color="#111111"
+            color="var(--dark-1)"
             onClick={() => dispatch(playSong())}
           />
         )}
 
-        <SkipForward size={24} color="#111111" onClick={handleNextSong} />
+        <SkipForward size={24} color="var(--dark-1)" onClick={handleNextSong} />
         <Repeat
           size={24}
-          color={repeat ? "#ffffff" : "#111111"}
+          color={repeat ? "var(--light)" : "var(--dark-1)"}
           onClick={() => setRepeat(!repeat)}
         />
         <Volume audio={song.audio} isPlaying={song.isPlaying} />

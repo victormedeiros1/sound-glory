@@ -29,7 +29,11 @@ const Actions: React.FC<Props> = ({ playlists, song }) => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button aria-label="Customise options">
-          <DotsThreeVertical size={24} color="#a3a3a3" weight="light" />
+          <DotsThreeVertical
+            size={24}
+            color="var(--lightGray)"
+            weight="light"
+          />
         </button>
       </DropdownMenu.Trigger>
 

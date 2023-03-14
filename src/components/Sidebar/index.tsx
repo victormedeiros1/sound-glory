@@ -30,10 +30,10 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
       <Nav navbarIsOpen={navbarIsOpen}>
         <NavContent>
           <Logo />
-          <NavItem style={{ color: "#fff" }} onClick={changeToAllSongs}>
-            <Circle size={6} weight="fill" color="#fff" />
+          <NavItem style={{ color: "var(--light)" }} onClick={changeToAllSongs}>
+            <Circle size={6} weight="fill" color="var(--light)" />
             HOME
-            <Circle size={6} weight="fill" color="#fff" />
+            <Circle size={6} weight="fill" color="var(--light)" />
           </NavItem>
           <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
           <Divider />
@@ -46,7 +46,7 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
 
         <ToggleNav navbarIsOpen={navbarIsOpen}>
           <NavArrow onClick={() => setNavbarIsOpen(!navbarIsOpen)}>
-            <CaretRight size={16} color="#111" />
+            <CaretRight size={16} color="var(--dark-1)" />
           </NavArrow>
         </ToggleNav>
       </Nav>
