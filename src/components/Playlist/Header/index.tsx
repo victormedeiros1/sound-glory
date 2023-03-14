@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         <Details>
           <DetailsItem>{songs.length} songs</DetailsItem>
           <Circle size={4} weight="fill" color="#a36238" />
-          <DetailsItem>{secondsToMinutes(totalDuration)}</DetailsItem>
+          <DetailsItem>{secondsToMinutes(totalDuration, true)}</DetailsItem>
         </Details>
       </Infos>
     </HeaderStyles>

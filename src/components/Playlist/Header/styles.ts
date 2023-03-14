@@ -24,7 +24,7 @@ export const Title = styled.h1`
 export const Infos = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   padding: var(--p-16);
 
