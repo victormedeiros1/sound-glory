@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPlaylist } from "../../store/ducks/playlists";
 import {
@@ -20,11 +20,10 @@ interface Props {
 
 const Modal: React.FC<Props> = ({ open, setOpen }) => {
   const dispatch = useDispatch();
+  const [name, setName] = useState<string>("");
 
-  const handleForm = (e: any) => {
+  const handleForm = (e: React.FormEvent) => {
     e.preventDefault();
-    const name = e.target.elements.name.value;
-
     dispatch(addPlaylist(name));
     setOpen(false);
   };
@@ -37,7 +36,12 @@ const Modal: React.FC<Props> = ({ open, setOpen }) => {
         <Form onSubmit={handleForm}>
           <FormGroup>
             <Label htmlFor="input-playlist-name">Nome</Label>
-            <Input id="input-playlist-name" name="name" type="text" />
+            <Input
+              id="input-playlist-name"
+              name="name"
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+            />
           </FormGroup>
 
           <Submit>CRIAR</Submit>

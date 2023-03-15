@@ -60,9 +60,10 @@ const Progress: React.FC<Props> = ({
     setDuration(audio.duration);
   };
 
-  const handleRange = (e: any) => {
-    setCurrentTime(e);
-    dispatch(setTime(e));
+  const handleRange = (e: number[]) => {
+    const time = e[0];
+    setCurrentTime(time);
+    dispatch(setTime(time));
   };
 
   return (
