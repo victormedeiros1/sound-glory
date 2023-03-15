@@ -21,6 +21,8 @@ import {
   SongData,
 } from "./styles";
 import { secondsToMinutes } from "../../../utils";
+import thumbnail32x32 from "/src/assets/images/thumb-32x32.jpg";
+
 interface Props {
   song: ISong;
   index: Number;
@@ -51,10 +53,7 @@ const Song: React.FC<Props> = ({ song, index }) => {
     <SongWrapper>
       <SongData onClick={handlePlayOrPause}>
         <Index>{Number(index) + 1}</Index>
-        <Thumbnail
-          src="/src/assets/images/thumb-32x32.jpg"
-          alt="Song thumbnail"
-        />
+        <Thumbnail src={thumbnail32x32} alt="Song thumbnail" />
         <Bars isActive={isPlaying && id === song.id} />
         <Infos>
           <Title>

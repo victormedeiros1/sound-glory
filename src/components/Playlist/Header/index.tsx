@@ -11,6 +11,8 @@ import {
 import { secondsToMinutes } from "../../../utils";
 import { Circle } from "phosphor-react";
 
+import thumbnail128x128 from "/src/assets/images/thumb-128x128.jpg";
+
 const Header: React.FC = () => {
   const songs = useAppSelector((state) => state.songs);
   const [totalDuration, setTotalDuration] = useState<number>(0);
@@ -29,10 +31,7 @@ const Header: React.FC = () => {
   return (
     <HeaderStyles>
       {/* <Thumbnail src="https://picsum.photos/128/128" /> */}
-      <Thumbnail
-        src="/src/assets/images/thumb-128x128.jpg"
-        alt="Playlist thumbnail"
-      />
+      <Thumbnail src={thumbnail128x128} alt="Playlist thumbnail" />
       <Infos>
         <Title>HOME</Title>
         <Details>
