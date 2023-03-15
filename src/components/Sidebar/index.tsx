@@ -30,16 +30,15 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
       <Nav navbarIsOpen={navbarIsOpen}>
         <NavContent>
           <Logo />
-          <NavItem style={{ color: "var(--light)" }} onClick={changeToAllSongs}>
-            <Circle size={6} weight="fill" color="var(--light)" />
-            HOME
-            <Circle size={6} weight="fill" color="var(--light)" />
+          <NavItem htmlFor="home-radio" onClick={changeToAllSongs}>
+            HOME <input id="home-radio" type="radio" name="itemSelected" />
           </NavItem>
           <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
           <Divider />
           {playlists.map(({ id, name }) => (
-            <NavItem onClick={() => changePlaylist(id)} key={id}>
+            <NavItem htmlFor={id} onClick={() => changePlaylist(id)} key={id}>
               {name}
+              <input id={id} type="radio" name="itemSelected" />
             </NavItem>
           ))}
         </NavContent>

@@ -30,10 +30,13 @@ export const Nav = styled.nav<Props>`
 export const NavContent = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--g-8);
 `;
 
-export const NavItem = styled.button`
+export const NavItem = styled.label`
+  width: fit-content;
+  position: relative;
   display: flex;
   background-color: transparent;
   align-items: center;
@@ -43,10 +46,36 @@ export const NavItem = styled.button`
   font-size: var(--fs-12);
   font-weight: 700;
   letter-spacing: 1px;
+  cursor: pointer;
   gap: var(--g-8);
 
   :hover {
     color: var(--light);
+  }
+  input {
+    display: none;
+  }
+
+  :has(input:checked) {
+    color: var(--light);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 4px;
+      height: 4px;
+      background-color: white;
+      border-radius: 1000px;
+    }
+
+    &::before {
+      left: -0.5rem;
+    }
+
+    &::after {
+      right: -0.5rem;
+    }
   }
 `;
 
