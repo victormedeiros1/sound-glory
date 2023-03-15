@@ -33,7 +33,7 @@ export const Title = styled.span`
 `;
 
 export const Description = styled.span`
-  font-size: 11px;
+  font-size: var(--fs-11);
   color: var(--lightGray);
 `;
 

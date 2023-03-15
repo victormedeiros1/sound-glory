@@ -28,7 +28,11 @@ const Header: React.FC = () => {
 
   return (
     <HeaderStyles>
-      <Thumbnail src="https://picsum.photos/128/128" />
+      {/* <Thumbnail src="https://picsum.photos/128/128" /> */}
+      <Thumbnail
+        src="/src/assets/images/thumb-128x128.jpg"
+        alt="Playlist thumbnail"
+      />
       <Infos>
         <Title>HOME</Title>
         <Details>

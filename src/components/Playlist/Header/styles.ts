@@ -7,6 +7,7 @@ export const HeaderStyles = styled.header`
 
 export const Thumbnail = styled.img`
   max-width: 8rem;
+  border: 1px solid var(--gray);
 
   @media (max-width: 576px) {
     max-width: 6rem;

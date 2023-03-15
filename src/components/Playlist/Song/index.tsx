@@ -51,7 +51,10 @@ const Song: React.FC<Props> = ({ song, index }) => {
     <SongWrapper>
       <SongData onClick={handlePlayOrPause}>
         <Index>{Number(index) + 1}</Index>
-        <Thumbnail src="https://picsum.photos/48/48" />
+        <Thumbnail
+          src="/src/assets/images/thumb-32x32.jpg"
+          alt="Song thumbnail"
+        />
         <Bars isActive={isPlaying && id === song.id} />
         <Infos>
           <Title>
