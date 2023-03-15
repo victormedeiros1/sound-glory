@@ -31,7 +31,13 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
         <NavContent>
           <Logo />
           <NavItem htmlFor="home-radio" onClick={changeToAllSongs}>
-            HOME <input id="home-radio" type="radio" name="itemSelected" />
+            HOME{" "}
+            <input
+              id="home-radio"
+              defaultChecked
+              type="radio"
+              name="itemSelected"
+            />
           </NavItem>
           <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
           <Divider />
