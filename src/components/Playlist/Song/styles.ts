@@ -23,11 +23,14 @@ export const SongData = styled.div`
 
 export const Infos = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  overflow: hidden;
 `;
 
 export const Title = styled.span`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: var(--fs-14);
   color: var(--lightGray);
 `;
@@ -64,4 +67,8 @@ export const Actions = styled.div`
 export const Duration = styled.span`
   font-size: var(--fs-14);
   color: var(--lightGray);
+
+  @media (max-width: 576px) {
+    font-size: var(--fs-12);
+  }
 `;

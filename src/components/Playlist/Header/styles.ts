@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeaderStyles = styled.header`
   display: flex;
   box-shadow: var(--shadow);
+  overflow: hidden;
 `;
 
 export const Thumbnail = styled.img`

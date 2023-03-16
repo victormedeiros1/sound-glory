@@ -41,5 +41,6 @@ h6 {
 @media (max-width: 576px) {
   :root {
     --fs-16: 0.875rem;
+    --fs-48: 1.5rem;
   }
 }

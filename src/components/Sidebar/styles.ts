@@ -35,12 +35,14 @@ export const NavContent = styled.ul`
 `;
 
 export const NavItem = styled.label`
-  width: fit-content;
+  max-width: 136px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
   position: relative;
-  display: flex;
   background-color: transparent;
   align-items: center;
-  justify-content: center;
   border: none;
   color: var(--lightGray);
   font-size: var(--fs-12);

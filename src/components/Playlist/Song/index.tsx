@@ -56,16 +56,8 @@ const Song: React.FC<Props> = ({ song, index }) => {
         <Thumbnail src={thumbnail32x32} alt="Song thumbnail" />
         <Bars isActive={isPlaying && id === song.id} />
         <Infos>
-          <Title>
-            {window.screen.width < 576 && song.title.length > 24
-              ? song.title.slice(0, 24) + "..."
-              : song.title}
-          </Title>
-          <Description>
-            {window.screen.width < 576 && song.description.length > 24
-              ? song.description.slice(0, 24) + "..."
-              : song.description}
-          </Description>
+          <Title>{song.title}</Title>
+          <Description>{song.description}</Description>
         </Infos>
         <Duration>{secondsToMinutes(song.duration)}</Duration>
       </SongData>
