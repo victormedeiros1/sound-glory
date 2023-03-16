@@ -61,24 +61,6 @@ export const NavItem = styled.label`
 
   :has(input:checked) {
     color: var(--light);
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      width: 4px;
-      height: 4px;
-      background-color: white;
-      border-radius: 1000px;
-    }
-
-    &::before {
-      left: -0.5rem;
-    }
-
-    &::after {
-      right: -0.5rem;
-    }
   }
 `;
 
