@@ -8,10 +8,10 @@ import {
   FormGroup,
   Label,
   Input,
-  Submit,
   Title,
   Close,
 } from "./styles";
+import Button from "../Button";
 
 interface Props {
   open: boolean;
@@ -32,7 +32,7 @@ const Modal: React.FC<Props> = ({ open, setOpen }) => {
     <Pelicle open={open}>
       <ModalStyles>
         <Close onClick={() => setOpen(!open)} size={16} />
-        <Title>Nova playlist</Title>
+        <Title>NOVA PLAYLIST</Title>
         <Form onSubmit={handleForm}>
           <FormGroup>
             <Label htmlFor="input-playlist-name">Nome</Label>
@@ -44,7 +44,7 @@ const Modal: React.FC<Props> = ({ open, setOpen }) => {
             />
           </FormGroup>
 
-          <Submit>CRIAR</Submit>
+          <Button>CRIAR</Button>
         </Form>
       </ModalStyles>
     </Pelicle>
