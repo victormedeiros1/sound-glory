@@ -16,6 +16,8 @@ import thumbnail128x128 from "/src/assets/images/thumb-128x128.jpg";
 const Header: React.FC = () => {
   const songs = useAppSelector((state) => state.songs);
   const [totalDuration, setTotalDuration] = useState<number>(0);
+  const playlists = useAppSelector((state) => state.playlists);
+  const playlistSelected = playlists.find((playlist) => playlist.selected);
 
   const sumAllDurations = () => {
     const allDurations = songs.map(({ duration }) => duration);
@@ -33,7 +35,7 @@ const Header: React.FC = () => {
       {/* <Thumbnail src="https://picsum.photos/128/128" /> */}
       <Thumbnail src={thumbnail128x128} alt="Playlist thumbnail" />
       <Infos>
-        <Title>HOME</Title>
+        <Title>{playlistSelected ? playlistSelected.name : "HOME"}</Title>
         <Details>
           <DetailsItem>{songs.length} songs</DetailsItem>
           <Circle size={4} weight="fill" color="#a36238" />
