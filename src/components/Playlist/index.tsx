@@ -23,13 +23,16 @@ const Playlist: React.FC = () => {
   return (
     <PlaylistStyles>
       <Header name={playlistSelected.name} songs={playlistSelected.songs} />
-      {playlistSelected.songs.length > 0 ? (
-        playlistSelected.songs.map((song, index) => (
-          <Song key={song.id} song={song} index={index} />
-        ))
-      ) : (
-        <Empty />
-      )}
+      <Songs>
+        {playlistSelected.songs.length > 0 ? (
+          playlistSelected.songs.map((song, index) => (
+            <Song key={song.id} song={song} index={index} />
+          ))
+        ) : (
+          <Empty />
+        )}
+      </Songs>
+      <Controls />
     </PlaylistStyles>
   );
 };
