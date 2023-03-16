@@ -32,7 +32,6 @@ const Header: React.FC = () => {
 
   return (
     <HeaderStyles>
-      {/* <Thumbnail src="https://picsum.photos/128/128" /> */}
       <Thumbnail src={thumbnail128x128} alt="Playlist thumbnail" />
       <Infos>
         <Title>{playlistSelected ? playlistSelected.name : "HOME"}</Title>

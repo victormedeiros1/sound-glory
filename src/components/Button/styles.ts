@@ -7,6 +7,7 @@ export const ButtonStyles = styled.button`
   font-size: var(--fs-12);
   font-weight: 700;
   color: var(--primaryMain);
+  letter-spacing: 1px;
   padding: 0.75rem 1.375rem;
 
   &:hover {

@@ -45,6 +45,7 @@ export const NavItem = styled.label`
   color: var(--lightGray);
   font-size: var(--fs-12);
   font-weight: 700;
+  text-align: center;
   letter-spacing: 1px;
   cursor: pointer;
   gap: var(--g-8);
