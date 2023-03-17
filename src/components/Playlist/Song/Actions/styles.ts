@@ -2,7 +2,7 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import styled from "styled-components";
 
 interface Props {
-  havePlaylist: number;
+  haveplaylist: number;
 }
 
 export const RightSlot = styled.div`
@@ -31,8 +31,8 @@ export const DropdownMenuSubContent = styled(DropdownMenu.SubContent)`
 `;
 
 export const DotsButton = styled(DropdownMenu.Trigger)<Props>`
-  cursor: ${(props) => (props.havePlaylist > 0 ? "pointer" : "initial")};
-  opacity: ${(props) => (props.havePlaylist > 0 ? 1 : 0.5)};
+  cursor: ${(props) => (props.haveplaylist > 0 ? "pointer" : "initial")};
+  opacity: ${(props) => (props.haveplaylist > 0 ? 1 : 0.5)};
 `;
 
 export const DropdownMenuSubTrigger = styled(DropdownMenu.SubTrigger)`

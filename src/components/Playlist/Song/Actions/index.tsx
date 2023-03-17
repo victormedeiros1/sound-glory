@@ -29,7 +29,7 @@ const Actions: React.FC<Props> = ({ playlists, song }) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger disabled={playlists.length === 0} asChild>
-        <DotsButton havePlaylist={playlists.length}>
+        <DotsButton haveplaylist={playlists.length}>
           <DotsThreeVertical
             size={24}
             color="var(--lightGray)"
