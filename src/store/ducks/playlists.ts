@@ -19,6 +19,11 @@ const playlistsSlice = createSlice({
         { id: uuid(), name: action.payload, songs: [], selected: false },
       ];
     },
+    deletePlaylist: (state, action) => {
+      return (state = state.filter(
+        (playlist) => playlist.id !== action.payload
+      ));
+    },
     addSongToPlaylist: (state, action) => {
       const { playlistId, song } = action.payload;
 
@@ -32,5 +37,5 @@ const playlistsSlice = createSlice({
 });
 
 export default playlistsSlice.reducer;
-export const { addPlaylist, addSongToPlaylist, setPlaylist } =
+export const { addPlaylist, deletePlaylist, addSongToPlaylist, setPlaylist } =
   playlistsSlice.actions;

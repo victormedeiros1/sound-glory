@@ -3,7 +3,7 @@ import Controls from "../Controls";
 import Header from "./Header";
 import Song from "./Song";
 import { PlaylistStyles, Songs } from "./styles";
-import { songs } from "../../helpers/songs";
+import { songs as allSongs } from "../../helpers/songs";
 import Empty from "./Empty";
 
 import { v4 as uuid } from "uuid";
@@ -14,19 +14,19 @@ const Playlist: React.FC = () => {
   const playlistDefault = {
     id: uuid(),
     name: "Home",
-    songs,
+    songs: allSongs,
     selected: true,
   };
 
-  const playlistSelected =
+  const { id, name, songs } =
     playlists.find((playlist) => playlist.selected) ?? playlistDefault;
   return (
     <PlaylistStyles>
-      <Header name={playlistSelected.name} songs={playlistSelected.songs} />
+      <Header name={name} songs={songs} playlistId={id} />
       <Songs>
-        {playlistSelected.songs.length > 0 ? (
-          playlistSelected.songs.map((song, index) => (
-            <Song key={song.id} song={song} index={index} />
+        {songs.length > 0 ? (
+          songs.map((song, index) => (
+            <Song key={id + index} song={song} index={index} />
           ))
         ) : (
           <Empty />

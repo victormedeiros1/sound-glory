@@ -61,7 +61,6 @@ const Song: React.FC<Props> = ({ song, index }) => {
         </Infos>
         <Duration>{secondsToMinutes(song.duration)}</Duration>
       </SongData>
-
       <Actions playlists={playlists} song={song} />
     </SongWrapper>
   );
