@@ -1,7 +1,7 @@
 import { ButtonStyles } from "./styles";
 
 interface Props {
-  children: string;
+  children: string | JSX.Element;
   onClick?: () => void;
 }
 

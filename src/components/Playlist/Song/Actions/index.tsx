@@ -2,6 +2,7 @@ import { CaretRight, DotsThreeVertical } from "phosphor-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Playlist } from "../../../../types/playlist";
 import {
+  DotsButton,
   DropdownMenuArrow,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -27,14 +28,14 @@ const Actions: React.FC<Props> = ({ playlists, song }) => {
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
-        <button aria-label="Customise options">
+      <DropdownMenu.Trigger disabled={playlists.length === 0} asChild>
+        <DotsButton havePlaylist={playlists.length}>
           <DotsThreeVertical
             size={24}
             color="var(--lightGray)"
             weight="light"
           />
-        </button>
+        </DotsButton>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
