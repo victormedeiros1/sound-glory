@@ -15,7 +15,7 @@ export const Thumbnail = styled.img`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   text-shadow: var(--shadow);
   color: var(--primaryMain);
   font-size: var(--fs-48);

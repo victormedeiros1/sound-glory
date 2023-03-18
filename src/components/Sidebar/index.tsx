@@ -3,7 +3,7 @@ import { CaretRight, Circle } from "phosphor-react";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import Divider from "../Divider";
 import Logo from "../Logo";
-import { Nav, NavArrow, NavContent, NavItem, ToggleNav } from "./styles";
+import { H1, Nav, NavArrow, NavContent, NavItem, ToggleNav } from "./styles";
 import { useDispatch } from "react-redux";
 import { setPlaylist } from "../../store/ducks/playlists";
 import SocialMedias from "../SocialMedias";
@@ -30,6 +30,7 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
     <>
       <Nav navbarIsOpen={navbarIsOpen}>
         <NavContent>
+          <H1>Sound Glory - An app to listen to music</H1>
           <Logo />
           <NavItem htmlFor="home-radio" onClick={changeToAllSongs}>
             HOME

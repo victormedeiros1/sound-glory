@@ -34,6 +34,12 @@ export const NavContent = styled.ul`
   gap: var(--g-8);
 `;
 
+export const H1 = styled.h1`
+  position: absolute;
+  top: -1000px;
+  opacity: 0;
+`;
+
 export const NavItem = styled.label`
   max-width: 136px;
   white-space: nowrap;

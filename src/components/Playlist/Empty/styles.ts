@@ -10,7 +10,7 @@ export const EmptyStyles = styled.div`
   margin: auto;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   color: var(--primaryMain);
   font-size: var(--fs-48);
   font-weight: 900;
