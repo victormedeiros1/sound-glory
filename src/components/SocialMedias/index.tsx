@@ -16,7 +16,7 @@ const SocialMedias: React.FC = () => {
         target="_blank"
         title="Go to LinkedIn"
       >
-        <LinkedinLogo size={32} color="var(--lightGray)" />
+        <LinkedinLogo size={24} color="var(--lightGray)" />
       </a>
       <a
         href="https://github.com/victormedeiros1"
@@ -25,7 +25,7 @@ const SocialMedias: React.FC = () => {
         target="_blank"
         title="Go to GitHub"
       >
-        <GithubLogo size={32} color="var(--lightGray)" />
+        <GithubLogo size={24} color="var(--lightGray)" />
       </a>
       <a
         href="https://www.figma.com/@victormedeiros1"
@@ -34,7 +34,7 @@ const SocialMedias: React.FC = () => {
         target="_blank"
         title="Go to Figma"
       >
-        <FigmaLogo size={32} color="var(--lightGray)" />
+        <FigmaLogo size={24} color="var(--lightGray)" />
       </a>
       <a
         href="https://www.instagram.com/victor_mdrss/"
@@ -43,7 +43,7 @@ const SocialMedias: React.FC = () => {
         target="_blank"
         title="Go to Instagram"
       >
-        <InstagramLogo size={32} color="var(--lightGray)" />
+        <InstagramLogo size={24} color="var(--lightGray)" />
       </a>
     </SocialMediasStyles>
   );
