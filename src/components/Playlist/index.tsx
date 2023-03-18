@@ -13,16 +13,16 @@ const Playlist: React.FC = () => {
 
   const playlistDefault = {
     id: uuid(),
-    name: "Home",
+    name: "HOME",
     songs: allSongs,
-    selected: true,
+    selected: false,
   };
 
-  const { id, name, songs } =
+  const { id, name, songs, selected } =
     playlists.find((playlist) => playlist.selected) ?? playlistDefault;
   return (
     <PlaylistStyles>
-      <Header name={name} songs={songs} playlistId={id} />
+      <Header name={name} songs={songs} playlistId={id} selected={selected} />
       <Songs>
         {songs.length > 0 ? (
           songs.map((song, index) => (

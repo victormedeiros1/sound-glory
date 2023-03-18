@@ -19,9 +19,10 @@ interface Props {
   name: string;
   songs: Song[];
   playlistId: string;
+  selected: boolean;
 }
 
-const Header: React.FC<Props> = ({ playlistId, name, songs }) => {
+const Header: React.FC<Props> = ({ playlistId, name, songs, selected }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
@@ -50,9 +51,11 @@ const Header: React.FC<Props> = ({ playlistId, name, songs }) => {
           <DetailsItem>{secondsToMinutes(sumAllDurations(), true)}</DetailsItem>
         </Details>
       </Infos>
-      <Button onClick={handleDelete}>
-        <Trash size={16} />
-      </Button>
+      {selected && (
+        <Button onClick={handleDelete}>
+          <Trash size={16} />
+        </Button>
+      )}
     </HeaderStyles>
   );
 };
