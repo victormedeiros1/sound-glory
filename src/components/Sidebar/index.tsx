@@ -6,6 +6,7 @@ import Logo from "../Logo";
 import { Nav, NavArrow, NavContent, NavItem, ToggleNav } from "./styles";
 import { useDispatch } from "react-redux";
 import { setPlaylist } from "../../store/ducks/playlists";
+import SocialMedias from "../SocialMedias";
 
 interface Props {
   open: boolean;
@@ -47,6 +48,8 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
               <input id={id} type="radio" name="itemSelected" />
             </NavItem>
           ))}
+
+          <SocialMedias />
         </NavContent>
 
         <ToggleNav navbarIsOpen={navbarIsOpen}>
