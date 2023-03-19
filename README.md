@@ -2,7 +2,14 @@
 
 
 # About
-An app to listen to music and mainly apply my studies in Typescript and Redux Toolkit
+An app to listen to music, create your playlists and have a lot of fun!
+
+# Technologies
+- React
+- Styled-components
+- TypeScript
+- Redux
+- Radix UI
 
 # Getting Started with Vite!
 Next Generation Frontend Tooling. Get ready for a development environment that can finally catch up with you.
