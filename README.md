@@ -38,3 +38,5 @@ To learn more about Vite, take a look at the following resources:
 - [Learn Vite](https://vitejs.dev/guide/) - an interactive Vite tutorial.
 
 You can check out [the Vite GitHub repository](https://github.com/vitejs/vite)
+
+This project is licensed from MIT. Learn more by clicking [LICENSE](here).
