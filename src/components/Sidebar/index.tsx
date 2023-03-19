@@ -32,7 +32,7 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
         <NavContent>
           <H1>Sound Glory - An app to listen to music</H1>
           <Logo />
-          <NavItem htmlFor="home-radio" onClick={changeToAllSongs}>
+          <NavItem htmlFor="home-radio" onClick={changeToAllSongs} tabIndex={0}>
             HOME
             <input
               id="home-radio"
@@ -41,10 +41,17 @@ const Sidebar: React.FC<Props> = ({ open, setOpen }) => {
               name="itemSelected"
             />
           </NavItem>
-          <NavItem onClick={() => setOpen(!open)}>CREATE PLAYLIST</NavItem>
+          <NavItem onClick={() => setOpen(!open)} tabIndex={0}>
+            CREATE PLAYLIST
+          </NavItem>
           <Divider />
           {playlists.map(({ id, name }) => (
-            <NavItem htmlFor={id} onClick={() => changePlaylist(id)} key={id}>
+            <NavItem
+              htmlFor={id}
+              onClick={() => changePlaylist(id)}
+              key={id}
+              tabIndex={0}
+            >
               {name}
               <input id={id} type="radio" name="itemSelected" />
             </NavItem>

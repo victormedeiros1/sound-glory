@@ -75,9 +75,8 @@ const Progress: React.FC<Props> = ({
         max={duration}
         step={1}
         onValueChange={handleRange}
-        aria-label="Song time"
       >
-        <SliderTrack>
+        <SliderTrack aria-label="Song time">
           <SliderRange />
         </SliderTrack>
         <SliderThumb />
