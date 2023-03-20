@@ -32,10 +32,10 @@ const Modal: React.FC<Props> = ({ open, setOpen }) => {
     <Pelicle open={open}>
       <ModalStyles>
         <Close onClick={() => setOpen(!open)} size={16} />
-        <Title>NOVA PLAYLIST</Title>
+        <Title>NEW PLAYLIST</Title>
         <Form onSubmit={handleForm}>
           <FormGroup>
-            <Label htmlFor="input-playlist-name">Nome</Label>
+            <Label htmlFor="input-playlist-name">Name</Label>
             <Input
               id="input-playlist-name"
               name="name"
@@ -44,7 +44,7 @@ const Modal: React.FC<Props> = ({ open, setOpen }) => {
             />
           </FormGroup>
 
-          <Button>CRIAR</Button>
+          <Button>CREATE</Button>
         </Form>
       </ModalStyles>
     </Pelicle>
