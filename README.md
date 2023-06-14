@@ -4,6 +4,9 @@
 # About
 An app to listen to music, create your playlists and have a lot of fun!
 
+# Live
+Try it right now by [clicking here](https://sound-glory.netlify.app/).
+
 # Technologies
 - React
 - Styled-components
